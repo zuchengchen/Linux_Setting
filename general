@@ -1,0 +1,2 @@
+# using vim instead vi
+ln -s /usr/bin/vim ~/bin/vi
