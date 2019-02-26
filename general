@@ -1,2 +1,6 @@
 # using vim instead vi
 ln -s /usr/bin/vim ~/bin/vi
+
+# add to ~/.bashrc
+alias pynote='jupyter notebook&'
+alias xopen='xdg-open'
