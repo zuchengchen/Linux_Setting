@@ -4,3 +4,6 @@ ln -s /usr/bin/vim ~/bin/vi
 # add to ~/.bashrc
 alias pynote='jupyter notebook&'
 alias xopen='xdg-open'
+
+# set git to store username
+git config credential.helper store
