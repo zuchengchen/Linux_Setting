@@ -7,3 +7,9 @@ alias xopen='xdg-open'
 
 # set git to store username
 git config credential.helper store
+
+# link software to ~/bin/directory
+ln -s ~/opt/cluster/itpzucheng ~/bin/itpzucheng
+ln -s ~/opt/julia/julia-1.0.3/bin/julia  ~/bin/julia1.0
+ln -s ~/opt/julia/julia-0.6.4/bin/julia ~/bin/julia0.6
+ln -s ~/bin/julia1.0 ~/bin/julia
