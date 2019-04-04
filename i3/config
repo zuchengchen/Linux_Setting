@@ -94,12 +94,12 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:Terminal  "
-set $ws2 "2:Media "
-set $ws3 "3:Web "
-set $ws4 "4:Web "
-set $ws5 "5:Web "
-set $ws6 "6:Vim "
+set $ws1 "1:Terminal"
+set $ws2 "2:Media" 
+set $ws3 "3:Web-fun"
+set $ws4 "4:Web-scholar"
+set $ws5 "5:Web"
+set $ws6 "6:Vim"
 set $ws7 "7:Code"
 set $ws8 "8"
 set $ws9 "9"
@@ -137,7 +137,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
