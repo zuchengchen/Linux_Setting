@@ -1,0 +1,77 @@
+# reference
+# https://github.com/bingining/conda-lal.git 
+
+git clone https://github.com/bingining/conda-lal.git
+cd conda-lal
+
+# remove the existing env pycbc2
+conda env remove -n pycbc2
+
+# create an environment named pycbc2 with python2
+conda create -n pycbc2 python=2
+
+source activate pycbc2
+conda config --add channels conda-forge
+conda update -y --all
+
+# set environment
+export ENVPATH="/public1/home/pg2236/opt/anaconda2/envs/pycbc"
+
+mkdir -p $ENVPATH/etc/conda/activate.d
+
+vi $ENVPATH/etc/conda/activate.d/env_vars.sh
+
+export ENVPATH=$HOME/opt/anaconda2/envs/pycbc2
+
+export OLD_PATH="$PATH"
+export PATH="$ENVPATH/bin:$PATH"
+
+export OLD_LD_LIBRARY_PATH="${LD_LIBRARY_PATH}"
+export LD_LIBRARY_PATH="$ENVPATH/lib:$ENVPATH/lib64:${LD_LIBRARY_PATH}"
+
+export OLD_PKG_CONFIG_PATH="${PKG_CONFIG_PATH}"
+export PKG_CONFIG_PATH="$ENVPATH/lib/pkgconfig:$ENVPATH/lib64/pkgconfig:${PKG_CONFIG_PATH}"
+
+export OLD_CPATH="$CPATH"
+export CPATH="$ENVPATH/include:/usr/include:$CPATH"
+
+export LAL_DATA_PATH="$ENVPATH/share/lalsimulation"
+
+
+
+mkdir -p $ENVPATH/etc/conda/deactivate.d
+vi $ENVPATH/etc/conda/deactivate.d/env_vars.sh
+
+unset ENVPATH
+export PATH="${OLD_PATH}"
+unset OLD_PATH
+
+
+conda install -y numpy=1.15 h5py cython conda-build fftw gsl
+pip install python-cjson
+
+conda build libframe
+conda install --use-local libframe
+
+conda build metaio
+conda install --use-local metaio
+
+
+
+conda build lalsuite
+conda install --use-local lalsuite
+
+
+pip install pycbc==1.12.3 lscsoft-glue==1.60
+
+
+# solve can not find the file finals2000A.all problem
+vi /public/home/chenzucheng/opt/anaconda2/envs/pycbc2/lib/python2.7/site-packages/pycbc/detector.py
+
+from astropy.utils import iers
+
+# Make sure the documentation can be built without an internet connection
+iers.conf.auto_download = False
+
+# test installation
+python test_waveform.py
