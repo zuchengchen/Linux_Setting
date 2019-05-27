@@ -1,0 +1,251 @@
+# set vi to show line number
+vi ~/.vimrc
+set number
+
+pip install --upgrade pip setuptools 
+
+#
+conda env list
+
+* view a list of installed packages
+conda list -n myenv
+conda list
+
+* create a new env
+conda create -n pycbc python=2  matplotlib=2.0 numpy=1.13 scipy=0.19
+
+pip install  matplotlib==2.0 numpy==1.13 scipy==0.19
+pip install lalsuite pycbc
+
+conda remove -n pycbc --all
+
+module load  intel/18.0.2-fast && module load  mpi/intel/18.0.2-fast && module load fftw/gnu/3.3.4-single 
+
+# install htop
+wget -c http://hisham.hm/htop/releases/2.2.0/htop-2.2.0.tar.gz
+ tar xvf htop-2.2.0.tar.gz
+cd htop-2.2.0/ 
+./configure --prefix=/public1/home/pg2236/opt/anaconda2
+make  -j  && make install && cd ..
+
+# install tmux
+
+# install libevent
+wget -c https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz
+tar xvf libevent-2.1.8-stable.tar.gz
+cd libevent-2.1.8-stable/
+./configure --prefix=/public1/home/pg2236/opt/anaconda2
+make  -j  && make install && cd ..
+
+# install ncurses
+wget -c ftp://ftp.invisible-island.net/ncurses/ncurses.tar.gz
+tar xvf ncurses.tar.gz
+cd ncurses-6.1/
+./configure --prefix=/public1/home/pg2236/opt/anaconda2
+make -j && make install && cd ..
+
+# install tmux
+git clone https://github.com/tmux/tmux.git
+cd tmux
+sh autogen.sh
+./configure --prefix=/public1/home/pg2236/opt/anaconda2
+make -j && make install &&   cd ..
+
+vi ~/.bashrc
+export LD_LIBRARY_PATH="/public1/home/pg2236/opt/anaconda2/lib:${LD_LIBRARY_PATH}"
+export PKG_CONFIG_PATH="/public1/home/pg2236/opt/anaconda2/lib/pkgconfig:${PKG_CONFIG_PATH}"
+export CPATH="/public1/home/pg2236/opt/anaconda2/include:$CPATH"
+
+*********** install pycbc **************
+source deactivate
+source activate pycbc
+
+#module load compiler/gnu/6.4.0
+echo $LD_LIBRARY_PATH
+echo $PATH
+
+export ENVPATH=/public1/home/pg2236/opt/anaconda2/envs/pycbc
+
+
+mkdir -p $ENVPATH/etc/conda/activate.d
+mkdir -p $ENVPATH/etc/conda/deactivate.d
+
+
+vi $ENVPATH/etc/conda/activate.d/env_vars.sh
+
+export ENVPATH="/public1/home/pg2236/opt/anaconda2/envs/pycbc"
+
+export OLD_PATH="$PATH"
+export PATH="$ENVPATH/bin:$PATH"
+
+export OLD_LD_LIBRARY_PATH="${LD_LIBRARY_PATH}"
+export LD_LIBRARY_PATH="$ENVPATH/lib:$ENVPATH/lib64:${LD_LIBRARY_PATH}"
+
+export OLD_PKG_CONFIG_PATH="${PKG_CONFIG_PATH}"
+export PKG_CONFIG_PATH="$ENVPATH/lib/pkgconfig:$ENVPATH/lib64/pkgconfig:${PKG_CONFIG_PATH}"
+
+export OLD_CPATH="$CPATH"
+export CPATH="$ENVPATH/include:/usr/include:$CPATH"
+
+export LAL_DATA_PATH="$ENVPATH/share/lalsimulation"
+
+
+vi $ENVPATH/etc/conda/deactivate.d/env_vars.sh
+
+unset ENVPATH
+
+export PATH="${OLD_PATH}"
+unset OLD_PATH
+
+export LD_LIBRARY_PATH="${OLD_LD_LIBRARY_PATH}"
+unset OLD_LD_LIBRARY_PATH
+
+export PKG_CONFIG_PATH="${OLD_PKG_CONFIG_PATH}"
+unset OLD_PKG_CONFIG_PATH
+
+export CPATH="$OLD_CPATH"
+unset OLD_CPATH
+
+unset LAL_DATA_PATH
+
+
+#####
+export ncore=10
+
+* install git-lfs
+wget -c https://github.com/git-lfs/git-lfs/releases/download/v2.5.0/git-lfs-linux-amd64-v2.5.0.tar.gz
+cp git-lfs $ENVPATH/bin
+
+* install the denpendencies for lalsuite
+
+* install binutils (needed only on ITP-HPC)
+wget https://ftp.gnu.org/gnu/binutils/binutils-2.27.tar.gz
+tar xvf binutils-2.27.tar.gz
+cd binutils-2.27
+[[ -d build ]] || mkdir build; cd build
+../configure --prefix=$ENVPATH --enable-shared --enable-host-shared
+make -j $ncore && make -j check 
+make install && make installcheck && cd ../..
+
+* install cfitsio (should use version < 3440)
+wget -c https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/cfitsio3430.tar.gz
+tar xvf cfitsio3430.tar.gz 
+cd cfitsio
+./configure --prefix=$ENVPATH && make shared 
+make install && cd ..
+
+* install  healpix
+wget -c https://astuteinternet.dl.sourceforge.net/project/healpix/Healpix_3.30/chealpix-3.30.0.tar.gz
+tar xvf chealpix-3.30.0.tar.gz 
+cd chealpix-3.30.0
+[[ -d build ]] || mkdir build; cd build
+../configure --prefix=$ENVPATH && make -j $ncore && make -j check 
+make install && make installcheck && cd ../..
+
+
+* install mpi
+sudo apt-get install openmpi-bin openmpi-common openssh-client openssh-server libopenmpi*
+
+wget http://www.mpich.org/static/downloads/3.2.1/mpich-3.2.1.tar.gz
+cd mpich-3.2.1
+[[ -d build ]] || mkdir build; cd build
+../configure --prefix=$ENVPATH --enable-shared
+make -j $ncore && make -j check 
+make install && make installcheck && cd ../..
+
+* install glibc
+#wget http://ftp.gnu.org/gnu/glibc/glibc-2.14.tar.gz
+[[ -d build ]] || mkdir build; cd build
+../configure --prefix=$ENVPATH 
+make -j $ncore && make -j check 
+make install && make installcheck
+
+* install fftw
+wget ftp://ftp.fftw.org/pub/fftw/fftw-3.3.4.tar.gz
+tar xvf fftw-3.3.4.tar.gz
+cd fftw-3.3.4/
+[[ -d build ]] || mkdir build; cd build
+../configure --prefix=$ENVPATH --enable-openmp --enable-threads --enable-mpi --enable-shared --enable-float 
+make -j $ncore && make -j check 
+make install && make installcheck
+
+make -j distclean
+../configure --prefix=$ENVPATH --enable-openmp --enable-threads --enable-mpi --enable-shared
+make -j $ncore && make -j check 
+make install && make installcheck && cd ../..
+
+* install gsl
+wget ftp://ftp.gnu.org/gnu/gsl/gsl-2.5.tar.gz
+tar xvf gsl-2.5.tar.gz
+cd gsl-2.5/
+[[ -d build ]] || mkdir build; cd build
+../configure --prefix=$ENVPATH && make -j $ncore && make -j check 
+make install && make -j installcheck && cd ../..
+
+* install frameL
+wget http://lappweb.in2p3.fr/virgo/FrameL/libframe-8.30.tar.gz
+tar xvf libframe-8.30.tar.gz 
+cd libframe-8.30/
+[[ -d build ]] || mkdir build; cd build
+make -j8 distclean 
+../configure --prefix=$ENVPATH &&  make -j $ncore && make -j check 
+make install && make -j installcheck&& cd ../..
+
+* install MetaIO
+wget http://software.ligo.org/lscsoft/source/metaio-8.4.0.tar.gz
+tar xvf metaio-8.4.0.tar.gz && cd metaio-8.4.0/
+[[ -d build ]] || mkdir build; cd build
+../configure --prefix=$ENVPATH &&  make -j $ncore && make -j check && make install && make -j installcheck && cd ../..
+
+* install libxml2 (with make check errors)
+wget -c ftp://xmlsoft.org/libxml2/libxml2-2.9.8.tar.gz
+cd libxml2-2.9.8
+[[ -d build ]] || mkdir build; cd build
+../configure --prefix=$ENVPATH &&  make -j $ncore && make -j $ncore tests
+make install && make -j installcheck&& cd ../..
+
+pip install --no-binary scipy scikit-learn
+
+
+* install pcre
+wget -c https://ftp.pcre.org/pub/pcre/pcre-8.42.tar.gz
+tar xvf pcre-8.42.tar.gz
+cd pcre-8.42
+[[ -d build ]] || mkdir build; cd build
+../configure --prefix=$ENVPATH &&  make -j $ncore && make -j check 
+make install && make -j installcheck&& cd ../..
+
+*install swig
+pip install pep8==1.5 pycodestyle
+wget https://jaist.dl.sourceforge.net/project/swig/swig/swig-3.0.12/swig-3.0.12.tar.gz
+tar xvf swig-3.0.12.tar.gz && cd swig-3.0.12/
+cd swig-3.0.12
+[[ -d build ]] || mkdir build; cd build
+../configure --prefix=$ENVPATH  --with-python  --without-java --without-perl5 --without-tcl  --without-lua
+make -j4  && make -j check 
+make install && cd ../..
+
+* install lalsuite ( with lalinference and lalapps make check errors )
+git clone https://git.ligo.org/lscsoft/lalsuite.git
+cd lalsuite/
+git checkout master
+./00boot 
+[[ -d build ]] || mkdir build; cd build
+../configure --prefix=$ENVPATH --enable-shared --enable-swig-python --enable-all-lal  
+make -j $ncore && make -j14 check
+make install && make -j installcheck&& cd ../..
+
+ --enable-mpi (with make errors)
+
+* install lalsuite-extra
+git clone https://git.ligo.org/lscsoft/lalsuite-extra.git
+git checkout master
+autoreconf -f -i
+./configure --prefix=$ENVPATH
+make install
+
+
+* install pycbc
+wget https://github.com/gwastro/pycbc/archive/v1.9.4.tar.gz
+
+python setup.py install --prefix=$ENVPATH 

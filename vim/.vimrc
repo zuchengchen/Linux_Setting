@@ -3,7 +3,7 @@ call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
 
-Plug 'lervag/vimtex'
+ Plug 'lervag/vimtex'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -15,7 +15,8 @@ let g:vimtex_latexmk_options="-pdf -pdflatex='xelatex -file-line-error -shell-es
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
-let g:vimtex_complete_recursive_bib = 0
+let g:vimtex_complete_recursive_bib=0
+let g:Tex_MultipleCompileFormats='pdf,bib,pdf'
 set conceallevel=1
 let g:tex_conceal='abdmg'
 
@@ -25,7 +26,7 @@ set nocompatible
 filetype plugin indent on
 
 " spell check
-setlocal spell spelllang=en_us
+setlocal spell spelllang=en
 
 " auto complete
 set complete+=kspell
@@ -43,7 +44,7 @@ set number
 set ts=4
 
 " indent when moving to the next line while writing code
-set autoindent
+"set autoindent
 
 " expand tabs into spaces
 set expandtab
@@ -60,12 +61,10 @@ set showmatch
 " enable all Python syntax highlighting features
 let python_highlight_all = 1 
 
-
-
 " highlight search
 set hlsearch 
 
-" change the comment clor to lightblue
+" change the comment color to lightblue
 highlight comment ctermfg=lightblue
 
 " insert <space> in the normal mode
@@ -74,3 +73,5 @@ nnoremap ss i<space><esc>
 " resolve the problem of copy-paste adding 0~ and 1~ problem
 set t_BE=
 
+" let paste without indentation
+set paste

@@ -1,0 +1,103 @@
+export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:/public/home/chenlu/zuchengchen/software/lib/pkgconfig
+export CPATH=$CPATH:/public/home/chenlu/zuchengchen/software/include
+
+ENVPATH=/public/home/chenlu/zuchengchen/software/anaconda2/envs/pycbc
+
+grep -Ril "Wno-misleading-indentation" .
+
+http://pycbc.org/pycbc/latest/html/install_virtualenv.html
+
+install on itp-cluster based on CentOs 6.6
+
+* find out your linux release
+lsb_release -a
+
+* install virtualenv
+pip install virtualenv --upgrade --user
+echo 'export PATH=/public/home/chenlu/.local/bin:${PATH}' >> ${HOME}/.bash_profile
+
+* install binutils (with error for make check)
+wget https://ftp.gnu.org/gnu/binutils/binutils-2.27.tar.gz
+../binutils-2.27/configure --prefix=$ENVPATH --enable-shared
+
+
+* install gcc
+wget http://ftp.tsukuba.wide.ad.jp/software/gcc/releases/gcc-6.4.0/gcc-6.4.0.tar.gz
+./contrib/download_prerequisites
+../gcc-6.4.0/configure --prefix=/public/home/chenlu/zuchengchen/software --enable-languages=c,c++,fortran,go --disable-multilib
+
+wget http://ftp.tsukuba.wide.ad.jp/software/gcc/releases/gcc-8.1.0/gcc-8.1.0.tar.gz
+../gcc-8.1.0/configure --prefix=/public/home/chenlu/zuchengchen/software --enable-languages=c,c++,fortran,go --disable-multilib
+
+
+* install the denpendencies for lalsuite
+* install fftw
+
+wget ftp://ftp.fftw.org/pub/fftw/fftw-3.3.5.tar.gz
+
+make distclean
+
+LDFLAGS=-L/public/home/chenlu/zuchengchen/software/lib
+./configure --prefix=$ENVPATH --enable-openmp --enable-threads --enable-mpi --enable-shared
+make -j
+make check
+make install
+make installcheck
+
+* install gsl
+wget https://mirrors.ustc.edu.cn/gnu/gsl/gsl-1.15.tar.gz
+./configure --prefix=$ENVPATH
+
+* install frameL
+wget http://lappweb.in2p3.fr/virgo/FrameL/libframe-8.30.tar.gz
+./configure --prefix=$ENVPATH
+
+
+* install MetaIO
+wget http://software.ligo.org/lscsoft/source/metaio-8.5.1.tar.gz
+
+./configure --prefix=$ENVPATH
+
+
+*install swig
+wget https://jaist.dl.sourceforge.net/project/swig/swig/swig-3.0.12/swig-3.0.12.tar.gz
+./configure --prefix=/public/home/chenlu/zuchengchen/software
+
+* install lalsuite
+git clone https://git.ligo.org/lscsoft/lalsuite.git
+
+git checkout master
+
+LDFLAGS=-L/public/home/chenlu/zuchengchen/software/lib
+./configure --prefix=$ENVPATH  --enable-swig-python --enable-python --enable-all-lal
+
+* install lalsuite-extra
+git clone https://git.ligo.org/lscsoft/lalsuite-extra.git
+./configure --prefix=/public/home/chenlu/zuchengchen/software
+
+export LAL_DATA_PATH=/public/home/chenlu/zuchengchen/software/share/lalsimulation
+
+pip install "nose>=1.0.0"
+curl https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/hdf5-1.8.12/src/hdf5-1.8.12.tar.gz > hdf5-1.8.12.tar.gz
+tar -zxvf hdf5-1.8.12.tar.gz
+cd hdf5-1.8.12
+./configure --prefix=$ENVPATH/hdf5-1.8.12
+HDF5_DIR=$ENVPATH/hdf5-1.8.12 
+pip install h5py
+
+* install pycbc
+
+* pip install http://download.pegasus.isi.edu/pegasus/4.7.3/pegasus-python-source-4.7.3.tar.gz --user
+
+* pip install ligo-gracedb --user
+
+* pip install git+https://github.com/ligo-cbc/pycbc@v1.1.1#egg=pycbc
+
+* pip install pycbc-pylal
+
+git clone https://github.com/gwastro/pycbc.git
+
+pip install "Sphinx>=1.5.0"
+pip install sphinx-rtd-theme
+pip install sphinxcontrib-programoutput
+
