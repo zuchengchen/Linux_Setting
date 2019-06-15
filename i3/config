@@ -100,10 +100,10 @@ set $ws3 "3:Web-fun"
 set $ws4 "4:Web-scholar"
 set $ws5 "5:Web"
 set $ws6 "6:Vim"
-set $ws7 "7:Code"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws7 "7:Tex"
+set $ws8 "8:Code"
+set $ws9 "9:Code"
+set $ws10 "10:Other"
 
 
 # switch to workspace
@@ -183,3 +183,12 @@ bindsym $mod+b exec firefox
 
 # launch lantern
 bindsym $mod+w exec lantern 
+
+# launch texstudio 
+bindsym $mod+x exec texstudio 
+
+# launch mathematica 
+bindsym $mod+m exec mathematica 
+
+# launch thunar--file browser
+bindsym $mod+Shift+f exec thunar
