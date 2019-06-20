@@ -1,0 +1,1 @@
+ssh -X -i $HOME/projects/done/Linux_Setting/cluster/itp/chenzucheng.id chenzucheng@159.226.161.107
