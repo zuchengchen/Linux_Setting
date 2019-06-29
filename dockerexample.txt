@@ -1,0 +1,16 @@
+docker run -it -v /home/hi/pycbc-project:/home/pycbc/project --name pycbcok pycbc-test  /bin/bash -l
+
+docker start -ia pycbcok 
+        
+docker ps -a
+docker rm
+docker volume ls -f dangling=true
+docker run --name test -it pycbc-test /bin/bash -l
+
+* copy files
+docker cp test:/home/pycbc/src ~/pycbc-project/source 
+
+scp -i chenlu_id_rsa -r /home/hi/pycbc-project/source chenlu@login2017.itp.ac.cn:/public/home/chenlu/zuchengchen
+
+wget https://losc.ligo.org/s/events/GW150914/H-H1_LOSC_16_V2-1126259446-32.gwf
+wget https://losc.ligo.org/s/events/GW150914/L-L1_LOSC_16_V2-1126259446-32.gwf

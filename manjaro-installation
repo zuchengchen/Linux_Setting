@@ -1,0 +1,30 @@
+# post-installation
+
+# update source
+sudo pacman-mirrors -i -c China -m rank
+sudo pacman -Syu
+
+# add another disk
+sudo blkid
+UUID=75fb13e5-ebe9-4d07-9550-d9613912ccd1 /home/bear/projects          ext4    defaults,noatime 0 2
+
+# firefox
+sudo pacman -S firefox
+
+
+ln -s /usr/bin/vim ~/bin/vi
+
+
+# install lantern
+pacaur -S libappindicator-gtk3
+pacaur -S debtap
+sudo debtap -u
+wget https://raw.githubusercontent.com/getlantern/lantern-binaries/master/lantern-installer-64-bit.deb
+debtap lantern-installer-64-bit.deb
+sudo pacman -U lantern-5.4.6-1-x86_64.pkg.tar.xz
+
+
+# install cuda
+# https://bugxch.github.io/Manjaro%E5%AE%89%E8%A3%85CUDA%E6%95%99%E7%A8%8B/
+sudo mhwd -a pci nonfree 0300
+pacaur -S cuda-8.0
