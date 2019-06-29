@@ -192,3 +192,12 @@ bindsym $mod+m exec mathematica
 
 # launch thunar--file browser
 bindsym $mod+Shift+f exec thunar
+
+# launch music 
+bindsym $mod+Shift+M exec netease-cloud-music 
+
+# launch wechat	 
+bindsym $mod+Shift+w exec electronic-wechat 
+
+# launch zotero 
+bindsym $mod+Shift+z exec zotero 
