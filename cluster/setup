@@ -1,0 +1,2 @@
+# leave thread working after log out
+nohup command </dev/null >command.log 2>&1 &
