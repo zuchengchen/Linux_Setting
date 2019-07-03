@@ -1,2 +1,2 @@
 # leave thread working after log out
-nohup command </dev/null >command.log 2>&1 &
+nohup python run_1e-5.py </dev/null >1e-5.log 2>&1 &
