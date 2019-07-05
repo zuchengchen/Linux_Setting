@@ -1,5 +1,11 @@
 # post-installation
 
+# set grub configuration in order to boot normally with Nvidia GPU
+# change /etc/defalt/grub
+# change GRUB_CMDLINE_LINUX="" to GRUB_CMDLINE_LINUX="splash nouveau.modeset=0"
+
+
+
 # update source
 sudo pacman-mirrors -i -c China -m rank
 sudo pacman -Syu

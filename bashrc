@@ -162,6 +162,7 @@ unset __conda_setup
 
 
 
+# added by Zu-Cheng
 ## Colorize the ls output ##
 alias ls='ls --color=auto'
 
@@ -173,7 +174,6 @@ alias l.='ls -d .* --color=auto'
 alias pynote='jupyter notebook&'
 alias xopen='xdg-open'
 
-# added by Zu-Cheng
 export PATH=$HOME/bin:$PATH
 export TEMPO2=/usr/share/tempo2
 
