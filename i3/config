@@ -188,7 +188,7 @@ bindsym $mod+w exec lantern
 bindsym $mod+x exec texstudio 
 
 # launch mathematica 
-bindsym $mod+m exec mathematica 
+bindsym $mod+m exec Mathematica 
 
 # launch thunar--file browser
 bindsym $mod+Shift+f exec thunar
@@ -201,3 +201,13 @@ bindsym $mod+Shift+w exec electronic-wechat
 
 # launch zotero 
 bindsym $mod+Shift+z exec zotero 
+
+# enable network
+exec --no-startup-id nm-applet
+
+# switch to workspace
+bindsym $mod+p workspace 11
+
+bindsym $mod+Shift+p move container to workspace 11
+
+workspace 11 output VGA-1

@@ -1,11 +1,3 @@
-# using vim instead vi
-ln -s /usr/bin/vim ~/bin/vi
-
-# add to ~/.bashrc
-alias pynote='jupyter notebook&'
-alias xopen='xdg-open'
-alias gtop='watch nvidia-smi'
-
 # set git to store username
 git config --global user.email "bingining@gmail.com"
 git config --global user.name "bingining"

@@ -173,6 +173,7 @@ alias ll='ls -lah'
 alias l.='ls -d .* --color=auto'
 alias pynote='jupyter notebook&'
 alias xopen='xdg-open'
+alias gtop='watch nvidia-smi'
 
 export PATH=$HOME/bin:$PATH
 export TEMPO2=/usr/share/tempo2
