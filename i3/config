@@ -205,9 +205,15 @@ bindsym $mod+Shift+z exec zotero
 # enable network
 exec --no-startup-id nm-applet
 
+# start volume control
+exec --no-startup-id pa-applet
+
 # switch to workspace
 bindsym $mod+p workspace 11
 
 bindsym $mod+Shift+p move container to workspace 11
 
 workspace 11 output VGA-1
+
+# enable numlock at startup
+exec_always --no-startup-id numlockx on
