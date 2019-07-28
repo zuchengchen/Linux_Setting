@@ -23,7 +23,7 @@ rm ~/opt/tempo2 -r
 mkdir ~/opt/tempo2
 cp T2runtime/ $TEMPO2 -r
 ./bootstrap
-./configure --prefix=/public/home/chenzucheng/opt/tempo2
+./configure --prefix=$HOME/opt/tempo2
 # LDFLAGS = -L/public/software//compiler/gnu/6.4.0/lib64 ... => Makefile
 make -j14 && make install
 make plugins && make plugins-install
@@ -32,7 +32,7 @@ git clone https://github.com/vallis/libstempo.git
 python setup.py  install --with-tempo2=$HOME/opt/tempo2
 
 # install enterprise
-git clone git://github.com/nanograv/enterprise
+git clone https://github.com/nanograv/enterprise.git 
 python setup.py  install
 
 
