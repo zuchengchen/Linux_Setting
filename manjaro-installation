@@ -15,12 +15,28 @@ sudo pacman -Syu
 sudo blkid
 UUID=75fb13e5-ebe9-4d07-9550-d9613912ccd1 /home/bear/projects          ext4    defaults,noatime 0 2
 
+# install fcitx
+sudo pacman -S fcitx-im
+sudo pacman -S fcitx-configtool
+# vi .profile
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=”@im=fcitx”
+
 # firefox
 sudo pacman -S firefox
 
 
 ln -s /usr/bin/vim ~/bin/vi
 
+# install trizen
+sudo pacman -S trizen
+
+# install wechat
+trizen wechat
+
+
+trizen netease-cloud-music
 
 # install lantern
 pacaur -S libappindicator-gtk3
