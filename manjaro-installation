@@ -9,11 +9,23 @@ sudo update-grub
 
 # update source
 sudo pacman-mirrors -i -c China -m rank
+sudo pacman -R engrampa-thunar-plugin
 sudo pacman -Syu
+
+sudo pacman -S i3-wm
+sudo pacman -S i3lock i3status
 
 # add another disk
 sudo blkid
 UUID=75fb13e5-ebe9-4d07-9550-d9613912ccd1 /home/bear/projects          ext4    defaults,noatime 0 2
+
+# install fcitx
+sudo pacman -S fcitx-im
+sudo pacman -S fcitx-configtool
+# vi .profile
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=”@im=fcitx”
 
 # firefox
 sudo pacman -S firefox
@@ -21,6 +33,14 @@ sudo pacman -S firefox
 
 ln -s /usr/bin/vim ~/bin/vi
 
+# install trizen
+sudo pacman -S trizen
+
+# install wechat
+trizen wechat
+
+
+trizen netease-cloud-music
 
 # install lantern
 pacaur -S libappindicator-gtk3
@@ -35,3 +55,7 @@ sudo pacman -U lantern-5.4.6-1-x86_64.pkg.tar.xz
 # https://bugxch.github.io/Manjaro%E5%AE%89%E8%A3%85CUDA%E6%95%99%E7%A8%8B/
 sudo mhwd -a pci nonfree 0300
 pacaur -S cuda-8.0
+
+# install latex+texstudio
+sudo pacman -S texlive-lang biber texlive-most
+sudo pacman -S texstudio
