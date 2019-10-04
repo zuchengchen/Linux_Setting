@@ -178,8 +178,6 @@ alias gtop='watch nvidia-smi'
 export PATH=$HOME/bin:$PATH
 export TEMPO2=/usr/share/tempo2
 
-alias gtop='watch nvidia-smi'
-
 # add cuda path
 export CUDA_HOME=/opt/cuda
 export PATH=$PATH:/opt/cuda/bin
