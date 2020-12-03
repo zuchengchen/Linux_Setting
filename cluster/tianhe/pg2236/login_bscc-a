@@ -1,0 +1,2 @@
+#papp_cloud -s ssh -i $HOME/projects/done/Linux_Setting/cluster/tianhe/pg2236/pg2236.id pg2236@cg2
+papp_cloud ssh pg2236@bscc-a
