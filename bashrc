@@ -96,7 +96,6 @@ alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
 
-
 xhost +local:root > /dev/null 2>&1
 
 complete -cf sudo
@@ -124,10 +123,7 @@ ex ()
       *.tar.bz2)   tar xjf $1   ;;
       *.tar.gz)    tar xzf $1   ;;
       *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1     ;;
-      *.gz)        gunzip $1    ;;
-      *.tar)       tar xf $1    ;;
-      *.tbz2)      tar xjf $1   ;;
+      *.rar)       unrar x $1     ;; *.gz)        gunzip $1    ;; *.tar)       tar xf $1    ;; *.tbz2)      tar xjf $1   ;;
       *.tgz)       tar xzf $1   ;;
       *.zip)       unzip $1     ;;
       *.Z)         uncompress $1;;
@@ -138,10 +134,6 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
-
-# better yaourt colors
-export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
-
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -159,33 +151,43 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 
+# added by Zu-Cheng Chen
+export PATH="$HOME/bin:$PATH"
 
-
-
-# added by Zu-Cheng
 ## Colorize the ls output ##
 alias ls='ls --color=auto'
 
 ## Use a long listing format ##
 alias ll='ls -lah'
+alias l='ls -lah'
 
 ## Show hidden files ##
 alias l.='ls -d .* --color=auto'
+
 alias pynote='jupyter notebook&'
-alias xopen='xdg-open'
-alias gtop='watch nvidia-smi'
-
-export PATH=$HOME/bin:$PATH
-export TEMPO2=/usr/share/tempo2
-
-# add cuda path
-export CUDA_HOME=/opt/cuda
-export PATH=$PATH:/opt/cuda/bin
-export LD_LIBRARY_PATH=/opt/cuda/lib64:$LD_LIBRARY_PATH
-
-# add temp2 path
+alias julab='jupyter lab --ip=0.0.0.0 --port 1021&'
+alias xopen='xdg-open' 
+alias wget="wget -c"
+alias sshligo="ssh zu-cheng.chen@ssh.ligo.org"
+alias sshhawk="ssh zu-cheng.chen@ligo.gravity.cf.ac.uk"
+alias rm="rm -rf"
+alias teamviewer="sudo teamviewer daemon restart && teamviewer"
+alias NSBH="conda activate NSBH"
+alias nohuptime='nohup /usr/bin/time --verbose'
+alias stock="conda activate stock"
+alias PTA="conda activate PTA"
+alias PTAPolar="conda activate PTAPolar"
+alias cp="cp -r"
+alias tail="tail -f"
+alias ln="ln -s"
+     
+# add tempo2 path
+export TEMPO2=$HOME/opt/tempo2/share
 export PATH=$PATH:$HOME/opt/tempo2/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opt/tempo2/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opt/tempo2/lib:$HOME/opt/MultiNest/lib:/home/bear/projects/working/pycbc-waveform-SEOBNRE
 export CPATH=$CPATH:$HOME/opt/tempo2/include
+export PATH=/home/bear/bin:$PATH
 
-
+# add z.lua
+eval "$(lua $HOME/opt/z.lua/z.lua --init bash enhanced once fzf)"
+export _ZL_ECHO=1
