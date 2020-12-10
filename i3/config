@@ -95,7 +95,7 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:Terminal"
-set $ws2 "2:Media" 
+set $ws2 "2:Media"
 set $ws3 "3:Web-fun"
 set $ws4 "4:Web-scholar"
 set $ws5 "5:Web"
@@ -169,11 +169,21 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        status_command i3status --config ~/.config/i3/i3status.conf
+		font pango:Hack, FontAwesome 9 
+       # status_command py3status -c ~/.config/i3/i3status.conf
         tray_output primary
 }
 
 # below are added by Zu-Cheng Chen
+#The following configurations can be added to enable brightness keys.
+bindsym XF86MonBrightnessDown   exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp     exec xbacklight -inc 10
+
+#The following configurations can be added to enable audio keys.
+bindsym XF86AudioLowerVolume    exec $psst pactl set-sink-volume @DEFAULT_SINK@ -5% && pactl set-sink-mute @DEFAULT_SINK@ 0 $update
+bindsym XF86AudioRaiseVolume    exec $psst pactl set-sink-volume @DEFAULT_SINK@ +5% && pactl set-sink-mute @DEFAULT_SINK@ 0 $update
+bindsym XF86AudioMute           exec $psst pactl set-sink-mute @DEFAULT_SINK@ toggle $update
 
 # lock screen
 bindsym $mod+Shift+x exec i3lock
@@ -194,7 +204,8 @@ bindsym $mod+m exec Mathematica
 bindsym $mod+Shift+f exec thunar
 
 # launch music 
-bindsym $mod+Shift+M exec netease-cloud-music 
+bindsym $mod+Shift+M exec petal 
+#bindsym $mod+Shift+M exec netease-cloud-music 
 
 # launch wechat	 
 bindsym $mod+Shift+w exec electronic-wechat 
@@ -202,18 +213,28 @@ bindsym $mod+Shift+w exec electronic-wechat
 # launch zotero 
 bindsym $mod+Shift+z exec zotero 
 
+# launch virtualbox
+bindsym $mod+Shift+v exec virtualbox
+
+# launch atom
+bindsym $mod+Shift+a exec atom
+
+# launch thunderbird 
+bindsym $mod+Shift+t exec thunderbird
+ 
 # enable network
 exec --no-startup-id nm-applet
 
 # start volume control
-exec --no-startup-id pa-applet
+#exec --no-startup-id pa-applet
+exec --no-startup-id volumeicon
 
 # switch to workspace
-bindsym $mod+p workspace 11
+#bindsym $mod+p workspace 11
 
-bindsym $mod+Shift+p move container to workspace 11
+#bindsym $mod+Shift+p move container to workspace 11
 
-workspace 11 output VGA-1
+#workspace 11 output VGA-1
 
 # enable numlock at startup
 exec_always --no-startup-id numlockx on
@@ -221,5 +242,14 @@ exec_always --no-startup-id numlockx on
 # autostart fcitx
 exec --no-startup-id fcitx
 
+# autostart terminal 
+exec --no-startup-id i3-msg "workspace $ws1; exec i3-sensible-terminal" 
+
 # enable bluetooth
-exec --no-startup-id blueman-manager
+exec --no-startup-id i3-msg "workspace $ws2; exec blueman-manager"
+
+# autostart flameshot
+exec --no-startup-id flameshot
+
+# autostart electronic-wechat 
+#exec --no-startup-id i3-msg "workspace $ws2; exec electronic-wechat"
