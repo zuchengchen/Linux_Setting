@@ -94,16 +94,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:Terminal"
-set $ws2 "2:Media"
-set $ws3 "3:Web-fun"
-set $ws4 "4:Web-scholar"
-set $ws5 "5:Web"
-set $ws6 "6:Vim"
-set $ws7 "7:Tex"
-set $ws8 "8:Code"
-set $ws9 "9:Code"
-set $ws10 "10:Other"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 
 
 # switch to workspace
@@ -197,6 +197,9 @@ bindsym $mod+w exec lantern
 # launch texstudio 
 bindsym $mod+x exec texstudio 
 
+# launch vs code 
+bindsym $mod+c exec code 
+
 # launch mathematica 
 bindsym $mod+m exec Mathematica 
 
@@ -204,11 +207,12 @@ bindsym $mod+m exec Mathematica
 bindsym $mod+Shift+f exec thunar
 
 # launch music 
-bindsym $mod+Shift+M exec petal 
-#bindsym $mod+Shift+M exec netease-cloud-music 
+#bindsym $mod+Shift+M exec petal 
+bindsym $mod+Shift+M exec netease-cloud-music 
 
 # launch wechat	 
 bindsym $mod+Shift+w exec electronic-wechat 
+#bindsym $mod+Shift+w exec wechat-uos 
 
 # launch zotero 
 bindsym $mod+Shift+z exec zotero 
@@ -218,6 +222,15 @@ bindsym $mod+Shift+v exec virtualbox
 
 # launch atom
 bindsym $mod+Shift+a exec atom
+
+# launch binance 
+bindsym $mod+Shift+b exec binance 
+
+# launch code
+bindsym $mod+Ctrl+c exec code 
+
+# launch notion 
+bindsym $mod+Shift+n exec notion-app 
 
 # launch thunderbird 
 bindsym $mod+Shift+t exec thunderbird
