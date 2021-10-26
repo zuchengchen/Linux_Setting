@@ -172,7 +172,15 @@ bar {
         status_command i3status --config ~/.config/i3/i3status.conf
 		font pango:Hack, FontAwesome 9 
        # status_command py3status -c ~/.config/i3/i3status.conf
-        tray_output primary
+		position bottom
+        colors  {
+                background #0F0F0F
+                statusline #D5D5D5
+                focused_workspace #F5F5FF #7FB256
+                active_workspace #E5E5E5 #5697B2
+                inactive_workspace #E5E5E5 #5697B2
+                urgent_workspace #E5E5E5 #BC9B54
+        }
 }
 
 # below are added by Zu-Cheng Chen
@@ -259,7 +267,7 @@ exec --no-startup-id fcitx
 exec --no-startup-id i3-msg "workspace $ws1; exec i3-sensible-terminal" 
 
 # enable bluetooth
-exec --no-startup-id i3-msg "workspace $ws2; exec blueman-manager"
+#exec --no-startup-id i3-msg "workspace $ws2; exec blueman-manager"
 
 # autostart flameshot
 exec --no-startup-id flameshot
