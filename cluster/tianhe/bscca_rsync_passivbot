@@ -1,0 +1,1 @@
+papp_cloud rsync --timeout=10 /home/bear/projects/working/stock/historical_data  pg2236@bscc-a:/public4/home/pg2236/projects/working/stock

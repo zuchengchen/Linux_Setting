@@ -1,0 +1,1 @@
+papp_cloud rsync --timeout=2 pg2236@bscc-a:/public4/home/pg2236/projects/working/pta/PPTA_DR2_GWB/code_preliminary/local_data/chains /home/bear/projects/working/pta/PPTA_DR2_GWB/code_preliminary/local_data/bscca_chains
