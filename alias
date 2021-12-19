@@ -1,0 +1,23 @@
+# Colorize the ls output
+alias ls='ls --color=auto'                                                                                                
+
+# Use a long listing format
+alias ll='ls -lah'
+alias l='ls -lah'
+
+# Show hidden files 
+alias l.='ls -d .* --color=auto'
+
+alias rm="rm -rvf"
+alias wget="wget -c"
+alias PTA="conda activate PTA"
+alias stock="conda activate stock"
+alias cp="cp -rf"
+alias tail="tail -f"
+alias ln="ln -s"
+alias du="du -h"
+alias passivbot="conda activate passivbot"
+alias julab="jupyter lab&"
+alias systemupdate="trizen -Syuu"
+
+export JULIA_PKG_SERVER=https://mirrors.tuna.tsinghua.edu.cn/julia

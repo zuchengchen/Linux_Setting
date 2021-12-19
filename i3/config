@@ -243,6 +243,9 @@ bindsym $mod+Shift+n exec notion-app
 # launch thunderbird 
 bindsym $mod+Shift+t exec thunderbird
  
+# launch slack 
+bindsym $mod+Shift+s exec slack 
+
 # enable network
 exec --no-startup-id nm-applet
 
