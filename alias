@@ -1,3 +1,4 @@
+export PATH="$PATH:$HOME/bin"
 # Colorize the ls output
 alias ls='ls --color=auto'                                                                                                
 
@@ -21,3 +22,7 @@ alias julab="jupyter lab&"
 alias systemupdate="trizen -Syuu"
 
 export JULIA_PKG_SERVER=https://mirrors.tuna.tsinghua.edu.cn/julia
+
+# add z.lua
+eval "$(/usr/bin/lua $HOME/opt/z.lua/z.lua --init bash enhanced once fzf)"
+export _ZL_ECHO=1
