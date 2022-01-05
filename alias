@@ -19,5 +19,6 @@ alias du="du -h"
 alias passivbot="conda activate passivbot"
 alias julab="jupyter lab&"
 alias systemupdate="trizen -Syuu"
-
+alias trizen="trizen --skipinteg"
+alias easyconnect="env LD_LIBRARY_PATH=/usr/share/sangfor/EasyConnect/oldlib/pango/usr/lib /usr/share/sangfor/EasyConnect/EasyConnect --enable-transparent-visuals --disable-gpu"
 export JULIA_PKG_SERVER=https://mirrors.tuna.tsinghua.edu.cn/julia
