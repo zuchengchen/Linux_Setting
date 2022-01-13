@@ -24,7 +24,8 @@ alias trizen="trizen --skipinteg"
 alias easyconnect="env LD_LIBRARY_PATH=/usr/share/sangfor/EasyConnect/oldlib/pango/usr/lib /usr/share/sangfor/EasyConnect/EasyConnect --enable-transparent-visuals --disable-gpu"
 alias youdu="/opt/apps/im.xinda.youdu/files/youdu.sh"
 alias sshbnuz2="ssh czc@10.2.58.138"
-
+alias ssh5950="ssh czc@10.147.19.163"
+alias sshbnuz="ssh czc@10.147.19.165"
 
 export JULIA_PKG_SERVER=https://mirrors.tuna.tsinghua.edu.cn/julia
 
