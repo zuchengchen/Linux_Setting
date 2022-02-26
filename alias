@@ -28,9 +28,20 @@ alias ssh59502="ssh czc@10.2.58.122"
 alias sshbnuz="ssh czc@10.147.19.165"
 alias sftpbnuz="sftp czc@10.147.19.165"
 alias sshbnuz2="ssh czc@10.2.58.138"
+alias jesse="conda activate jesse"
+alias sshvultr="ssh root@45.32.36.177"
+alias shutdown="sudo shutdown -h 0"
 
 export JULIA_PKG_SERVER=https://mirrors.tuna.tsinghua.edu.cn/julia
 
 # add z.lua
 eval "$(/usr/bin/lua $HOME/opt/z.lua/z.lua --init bash enhanced once fzf)"
 export _ZL_ECHO=1
+
+
+# add tempo2 path
+export TEMPO2=$HOME/opt/tempo2/share
+export PATH=$PATH:$HOME/opt/tempo2/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opt/tempo2/lib:$HOME/opt/miniconda3/lib
+export CPATH=$CPATH:$HOME/opt/tempo2/include
+export PATH=$HOME/bin:$PATH
