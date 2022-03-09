@@ -30,6 +30,9 @@ alias sshbnuz2="ssh czc@10.2.58.138"
 alias jesse="conda activate jesse"
 alias sshvultr="ssh root@45.32.36.177"
 alias shutdown="sudo shutdown -h 0"
+alias kill="kill -9"
+alias pptadirect="ssh -4 -v che441@venice.atnf.csiro.au -L 8081:medusa-srv0.atnf.csiro.au:8081"
+alias unzip="unzip -O CP936"
 
 export JULIA_PKG_SERVER=https://mirrors.tuna.tsinghua.edu.cn/julia
 
@@ -41,6 +44,7 @@ export _ZL_ECHO=1
 # add tempo2 path
 export TEMPO2=$HOME/opt/tempo2/share
 export PATH=$PATH:$HOME/opt/tempo2/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opt/tempo2/lib:$HOME/opt/miniconda3/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opt/tempo2/lib
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opt/tempo2/lib:$HOME/opt/miniconda3/lib
 export CPATH=$CPATH:$HOME/opt/tempo2/include
 export PATH=$HOME/bin:$PATH
