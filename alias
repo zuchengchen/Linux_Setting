@@ -49,3 +49,4 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opt/tempo2/lib
 #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opt/tempo2/lib:$HOME/opt/miniconda3/lib
 export CPATH=$CPATH:$HOME/opt/tempo2/include
 export PATH=$HOME/bin:$PATH
+export JULIA_NUM_THREADS=16

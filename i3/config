@@ -272,6 +272,9 @@ exec --no-startup-id i3-msg "workspace $ws1; exec i3-sensible-terminal"
 # enable bluetooth
 exec --no-startup-id i3-msg "workspace $ws2; exec blueman-manager"
 
+# enable clash 
+exec --no-startup-id i3-msg "workspace $ws0; exec cfw"
+
 # autostart flameshot
 exec --no-startup-id flameshot
 
