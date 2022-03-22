@@ -35,6 +35,7 @@ alias kill="kill -9"
 alias pptadirect="ssh -4 -v che441@venice.atnf.csiro.au -L 8081:medusa-srv0.atnf.csiro.au:8081"
 alias unzip="unzip -O CP936"
 alias startthunar="systemctl --user restart gvfs-daemon.service"
+alias clashy="clashy --no-sandbox %U"
 
 export JULIA_PKG_SERVER=https://mirrors.tuna.tsinghua.edu.cn/julia
 
