@@ -273,7 +273,7 @@ exec --no-startup-id i3-msg "workspace $ws1; exec i3-sensible-terminal"
 exec --no-startup-id i3-msg "workspace $ws2; exec blueman-manager"
 
 # enable clash 
-exec --no-startup-id i3-msg "workspace $ws2; exec cfw"
+#exec --no-startup-id i3-msg "workspace $ws2; exec cfw"
 
 # autostart flameshot
 exec --no-startup-id flameshot
