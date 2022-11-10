@@ -12,6 +12,8 @@ alias l.='ls -d .* --color=auto'
 alias rm="rm -rvf"
 alias wget="wget -c"
 alias PTA="conda activate PTA"
+alias PTA2="conda activate PTA2"
+alias PTA3="conda activate PTA3"
 alias stock="conda activate stock"
 alias cp="cp -rf"
 alias tail="tail -f"
@@ -19,23 +21,27 @@ alias ln="ln -s"
 alias du="du -h"
 alias passivbot="conda activate passivbot"
 alias julab="jupyter lab&"
-alias systemupdate="trizen -Syuu"
-alias trizen="trizen --skipinteg"
+alias systemupdate="trizen -Syuu --noconfirm"
+alias trizen="trizen --skipinteg --noconfirm"
 alias easyconnect="env LD_LIBRARY_PATH=/usr/share/sangfor/EasyConnect/oldlib/pango/usr/lib /usr/share/sangfor/EasyConnect/EasyConnect --enable-transparent-visuals --disable-gpu"
 alias youdu="/opt/apps/im.xinda.youdu/files/youdu.sh"
 alias ssh5950="ssh czc@10.147.19.163"
 alias ssh59502="ssh czc@10.2.58.122"
 alias sshbnuz="ssh czc@10.147.19.165"
 alias sftpbnuz="sftp czc@10.147.19.165"
-alias sshbnuz2="ssh czc@10.2.58.138"
-alias jesse="conda activate jesse"
+alias sshbnuz2="ssh czc@10.2.45.120"
+alias sftpbnuz2="sftp czc@10.2.45.120"
+alias sjesse="conda activate jesse"
 alias sshvultr="ssh root@45.32.36.177"
+alias sshvultr2="ssh root@45.77.178.82"
+alias sshozstar="ssh zuchen@ozstar.swin.edu.au"
 alias shutdown="sudo shutdown -h 0"
 alias kill="kill -9"
 alias pptadirect="ssh -4 -v che441@venice.atnf.csiro.au -L 8081:medusa-srv0.atnf.csiro.au:8081"
 alias unzip="unzip -O CP936"
 alias startthunar="systemctl --user restart gvfs-daemon.service"
 alias clashy="clashy --no-sandbox %U"
+alias icarogw="conda activate icarogw"
 
 export JULIA_PKG_SERVER=https://mirrors.tuna.tsinghua.edu.cn/julia
 
@@ -51,4 +57,4 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opt/tempo2/lib
 #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opt/tempo2/lib:$HOME/opt/miniconda3/lib
 export CPATH=$CPATH:$HOME/opt/tempo2/include
 export PATH=$HOME/bin:$PATH
-export JULIA_NUM_THREADS=16
+export JULIA_NUM_THREADS=32

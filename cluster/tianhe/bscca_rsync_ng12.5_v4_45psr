@@ -1,0 +1,1 @@
+papp_cloud rsync --timeout=2 pg2236@bscc-a:/public4/home/pg2236/projects/working/pta/nanograv-12.5yr_v4/code/local_data/chains /home/czc/projects/working/pta/nanograv-12.5yr_v4/code/local_data/chains_bscca 
