@@ -219,7 +219,7 @@ bindsym $mod+Shift+f exec thunar
 bindsym $mod+Shift+M exec netease-cloud-music 
 
 # launch wechat	 
-bindsym $mod+Shift+w exec electronic-wechat 
+bindsym $mod+Shift+w exec electronic-wechat-uos-bin
 #bindsym $mod+Shift+w exec wechat-uos 
 
 # launch zotero 
@@ -232,7 +232,7 @@ bindsym $mod+Shift+v exec virtualbox
 bindsym $mod+Shift+a exec atom
 
 # launch binance 
-bindsym $mod+Shift+b exec binance 
+bindsym $mod+Shift+b exec binance --no-sandbox
 
 # launch code
 bindsym $mod+Ctrl+c exec code 
