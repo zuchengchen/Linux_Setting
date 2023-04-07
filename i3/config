@@ -219,7 +219,7 @@ bindsym $mod+Shift+f exec thunar
 bindsym $mod+Shift+M exec netease-cloud-music 
 
 # launch wechat	 
-bindsym $mod+Shift+w exec electronic-wechat-uos-bin
+bindsym $mod+Shift+w exec wechat
 #bindsym $mod+Shift+w exec wechat-uos 
 
 # launch zotero 

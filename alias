@@ -29,12 +29,13 @@ alias ssh5950="ssh czc@10.147.19.163"
 alias ssh59502="ssh czc@10.2.58.122"
 alias sshbnuz="ssh czc@10.147.19.165"
 alias sftpbnuz="sftp czc@10.147.19.165"
-alias sshbnuz2="ssh czc@10.2.45.120"
-alias sftpbnuz2="sftp czc@10.2.45.120"
+alias sshbnuz2="ssh czc@10.2.45.111"
+alias sftpbnuz2="sftp czc@10.2.45.111"
 alias sjesse="conda activate jesse"
 alias sshvultr="ssh root@45.32.36.177"
 alias sshvultr2="ssh root@45.77.178.82"
 alias sshozstar="ssh zuchen@ozstar.swin.edu.au"
+alias ssh7742="ssh czc@10.2.58.178"
 alias shutdown="sudo shutdown -h 0"
 alias kill="kill -9"
 alias pptadirect="ssh -4 -v che441@venice.atnf.csiro.au -L 8081:medusa-srv0.atnf.csiro.au:8081"
@@ -42,8 +43,11 @@ alias unzip="unzip -O CP936"
 alias startthunar="systemctl --user restart gvfs-daemon.service"
 alias clashy="clashy --no-sandbox %U"
 alias icarogw="conda activate icarogw"
+alias changemac="sudo macchanger -r enp4s0"
 
 export JULIA_PKG_SERVER=https://mirrors.tuna.tsinghua.edu.cn/julia
+export BUNDLE_PATH=~/.gems
+export PATH=$PATH:/home/czc/.local/share/gem/ruby/3.0.0/bin
 
 # add z.lua
 eval "$(/usr/bin/lua $HOME/opt/z.lua/z.lua --init bash enhanced once fzf)"
@@ -58,3 +62,4 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opt/tempo2/lib
 export CPATH=$CPATH:$HOME/opt/tempo2/include
 export PATH=$HOME/bin:$PATH
 export JULIA_NUM_THREADS=32
+export MKL_NUM_THREADS=1
