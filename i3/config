@@ -257,6 +257,9 @@ bindsym $mod+Shift+M exec netease-cloud-music
 bindsym $mod+Shift+w exec wechat
 #bindsym $mod+Shift+w exec wechat-uos 
 
+# launch qq
+bindsym $mod+Shift+q exec linuxqq
+
 # launch zotero 
 bindsym $mod+Shift+z exec zotero 
 
@@ -285,7 +288,7 @@ bindsym $mod+Shift+s exec slack
 exec --no-startup-id nm-applet
 
 # start volume control
-#exec --no-startup-id pa-applet
+exec --no-startup-id pa-applet
 exec --no-startup-id volumeicon
 
 # switch to workspace

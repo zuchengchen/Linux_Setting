@@ -15,6 +15,7 @@ alias PTA="conda activate PTA"
 alias PTA2="conda activate PTA2"
 alias PTA3="conda activate PTA3"
 alias ng15="conda activate ng15"
+alias ng15polar="conda activate ng15polar"
 alias stock="conda activate stock"
 alias cp="cp -rfv"
 alias tail="tail -f"
@@ -51,10 +52,15 @@ alias icarogw="conda activate icarogw"
 alias binance="binance --no-sandbox"
 alias wemeet="LD_LIBRARY_PATH=/opt/wemeet/lib /opt/wemeet/bin/wemeetapp"
 alias changemac="sudo macchanger -r enp4s0"
-
+alias toyoutube="ffmpeg  -framerate 30 -f x11grab -i :0.0 -f pulse -i default -c:v libx264 -s 1920x1080 -r 60 -b:v 5000k  -crf 10 -vf format=yuv420p -c:a aac -b:a 128k -f flv rtmp://a.rtmp.youtube.com/live2/cutb-tugf-bt77-t71d-b89r"
 export JULIA_PKG_SERVER=https://mirrors.tuna.tsinghua.edu.cn/julia
 export BUNDLE_PATH=~/.gems
 export PATH=$PATH:/home/czc/.local/share/gem/ruby/3.0.0/bin
+export CUDA_HOME=$CONDA_PREFIX
+export PATH=/opt/cuda/bin:$PATH
+export CPATH=/opt/cuda/targets/x86_64-linux/include:$CPATH
+export LD_LIBRARY_PATH=/opt/cuda/targets/x86_64-linux/lib:$LD_LIBRARY_PATH
+
 
 # add z.lua
 eval "$(/usr/bin/lua $HOME/opt/z.lua/z.lua --init bash enhanced once fzf)"
