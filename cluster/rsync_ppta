@@ -1,0 +1,1 @@
+papp_cloud rsync --timeout=2 sca0052@bscc-a5:/public1/home/sca0052/projects/working/pta/ppta-dr2-gwb/code_preliminary/local_data /home/czc/projects/working/pta/ppta-dr2-gwb/code_preliminary/chains/bscca5 

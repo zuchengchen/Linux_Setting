@@ -1,0 +1,1 @@
+rsync -rvzh  --timeout=5 czc@10.147.19.163:/home/czc/projects/working/pta/ppta-dr2-gwb/sigwlog/code_5psr/local_data/chains /home/czc/projects/working/pta/ppta-dr2-gwb/sigwlog/code_5psr/local_data/5950_chains 
