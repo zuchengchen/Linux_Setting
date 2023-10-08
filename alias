@@ -56,10 +56,10 @@ alias toyoutube="ffmpeg  -framerate 30 -f x11grab -i :0.0 -f pulse -i default -c
 export JULIA_PKG_SERVER=https://mirrors.tuna.tsinghua.edu.cn/julia
 export BUNDLE_PATH=~/.gems
 export PATH=$PATH:/home/czc/.local/share/gem/ruby/3.0.0/bin
-export CUDA_HOME=$CONDA_PREFIX
-export PATH=/opt/cuda/bin:$PATH
-export CPATH=/opt/cuda/targets/x86_64-linux/include:$CPATH
-export LD_LIBRARY_PATH=/opt/cuda/targets/x86_64-linux/lib:$LD_LIBRARY_PATH
+#export CUDA_HOME=$CONDA_PREFIX
+#export PATH=/opt/cuda/bin:$PATH
+#export CPATH=/opt/cuda/targets/x86_64-linux/include:$CPATH
+#export LD_LIBRARY_PATH=/opt/cuda/targets/x86_64-linux/lib:$LD_LIBRARY_PATH
 
 
 # add z.lua
