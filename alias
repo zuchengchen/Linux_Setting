@@ -27,7 +27,7 @@ alias easyconnect="env LD_LIBRARY_PATH=/usr/share/sangfor/EasyConnect/oldlib/pan
 alias youdu="/opt/apps/im.xinda.youdu/files/youdu.sh"
 alias ssh5950="ssh czc@10.147.19.163"
 alias ssh59502="ssh czc@10.2.58.122"
-alias ssh5950_from_home="ssh czc@192.168.191.184"
+alias ssh5950_from_home="ssh czc@192.168.191.163"
 alias sshbnuz="ssh czc@10.147.19.165"
 alias sftpbnuz="sftp czc@10.147.19.165"
 alias sshbnuz2="ssh czc@10.2.45.111"
@@ -47,7 +47,7 @@ alias icarogw="conda activate icarogw"
 alias binance="binance --no-sandbox"
 alias wemeet="LD_LIBRARY_PATH=/opt/wemeet/lib /opt/wemeet/bin/wemeetapp"
 alias changemac="sudo macchanger -r enp4s0"
-
+alias rsync_DW="rsync -azP czc@192.168.191.163:/home/czc/projects/working/pta/domain_wall_ppta_dr2/ /home/czc/projects/working/pta/domain_wall_ppta_dr2/"
 export JULIA_PKG_SERVER=https://mirrors.tuna.tsinghua.edu.cn/julia
 export BUNDLE_PATH=~/.gems
 export PATH=$PATH:/home/czc/.local/share/gem/ruby/3.0.0/bin
