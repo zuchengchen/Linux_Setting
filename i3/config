@@ -288,7 +288,7 @@ bindsym $mod+Shift+s exec slack
 exec --no-startup-id nm-applet
 
 # start volume control
-exec --no-startup-id pa-applet
+#exec --no-startup-id pa-applet
 exec --no-startup-id volumeicon
 
 # switch to workspace
