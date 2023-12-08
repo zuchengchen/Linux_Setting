@@ -56,6 +56,7 @@ alias wemeet="LD_LIBRARY_PATH=/opt/wemeet/lib /opt/wemeet/bin/wemeetapp"
 alias changemac="sudo macchanger -r enp4s0"
 alias rsync_DW="rsync -azP czc@192.168.191.163:/home/czc/projects/working/pta/domain_wall_ppta_dr2/ /home/czc/projects/working/pta/domain_wall_ppta_dr2/"
 alias toyoutube="ffmpeg  -framerate 30 -f x11grab -i :0.0 -f pulse -i default -c:v libx264 -s 1920x1080 -r 60 -b:v 5000k  -crf 10 -vf format=yuv420p -c:a aac -b:a 128k -f flv rtmp://a.rtmp.youtube.com/live2/cutb-tugf-bt77-t71d-b89r"
+alias shutdown="shutdown -h 0"
 
 export JULIA_PKG_SERVER=https://mirrors.tuna.tsinghua.edu.cn/julia
 export BUNDLE_PATH=~/.gems

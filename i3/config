@@ -260,6 +260,9 @@ bindsym $mod+Shift+w exec wechat
 # launch qq
 bindsym $mod+Shift+q exec linuxqq
 
+# launch freefilesync
+bindsym $mod2+Shift+s exec freefilesync
+
 # launch zotero 
 bindsym $mod+Shift+z exec zotero 
 
