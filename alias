@@ -27,16 +27,18 @@ alias systemupdate="trizen -Syuu"
 alias trizen="trizen --skipinteg --noconfirm"
 alias easyconnect="env LD_LIBRARY_PATH=/usr/share/sangfor/EasyConnect/oldlib/pango/usr/lib /usr/share/sangfor/EasyConnect/EasyConnect --enable-transparent-visuals --disable-gpu"
 alias youdu="/opt/apps/im.xinda.youdu/files/youdu.sh"
-alias ssh5950="ssh czc@192.168.1.103"
+alias ssh5950="ssh 85525q84q3.vicp.fun -p 27408"
 alias ssh59502="ssh czc@10.2.58.122"
-alias ssh5950_from_home="ssh czc@192.168.191.192"
-alias sftp5950_from_home="sftp czc@192.168.191.192"
+alias ssh5950_from_home="ssh czc@172.16.0.59"
+#alias ssh5950_from_home="ssh czc@192.168.191.192"
+alias sftp5950_from_home="sftp czc@172.16.0.59"
+#alias sftp5950_from_home="sftp czc@192.168.191.192"
 alias sshbnuz="ssh czc@10.147.19.165"
 alias sftpbnuz="sftp czc@10.147.19.165"
-alias sftp7742="sftp czc@192.168.1.105"
-alias sftp7742_from_home="sftp czc@192.168.191.66"
-alias ssh7742="ssh 192.168.1.105"
-alias ssh7742_from_home="ssh 192.168.191.66"
+alias sftp7742="sftp czc@10.168.1.169"
+alias sftp7742_from_home="sftp czc@172.16.0.69"
+alias ssh7742="ssh 10.168.1.169"
+alias ssh7742_from_home="ssh 172.16.0.69"
 alias sshbnuz2="ssh czc@10.2.45.111"
 alias sftpbnuz2="sftp czc@10.2.45.111"
 alias sjesse="conda activate jesse"
@@ -57,6 +59,8 @@ alias changemac="sudo macchanger -r enp4s0"
 alias rsync_DW="rsync -azP czc@192.168.191.163:/home/czc/projects/working/pta/domain_wall_ppta_dr2/ /home/czc/projects/working/pta/domain_wall_ppta_dr2/"
 alias toyoutube="ffmpeg  -framerate 30 -f x11grab -i :0.0 -f pulse -i default -c:v libx264 -s 1920x1080 -r 60 -b:v 5000k  -crf 10 -vf format=yuv420p -c:a aac -b:a 128k -f flv rtmp://a.rtmp.youtube.com/live2/cutb-tugf-bt77-t71d-b89r"
 alias shutdown="shutdown -h 0"
+alias pbgui="conda activate pbgui"
+
 
 export JULIA_PKG_SERVER=https://mirrors.tuna.tsinghua.edu.cn/julia
 export BUNDLE_PATH=~/.gems
@@ -79,5 +83,5 @@ export PATH=$PATH:$HOME/opt/tempo2/bin
 #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opt/tempo2/lib:$HOME/opt/miniconda3/lib
 export CPATH=$CPATH:$HOME/opt/tempo2/include
 export PATH=$HOME/bin:$PATH
-export JULIA_NUM_THREADS=32
+export JULIA_NUM_THREADS=16
 export MKL_NUM_THREADS=1
