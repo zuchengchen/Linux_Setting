@@ -31,10 +31,10 @@ alias ssh5950="ssh czc@10.168.1.242"
 alias sftp5950="sftp czc@10.168.1.242"
 alias sshbnuz="ssh czc@10.147.19.165"
 alias sftpbnuz="sftp czc@10.147.19.165"
-alias sftp7742="sftp czc@10.2.58.123"
-alias sftp7742_from_home="sftp czc@192.168.191.66"
-alias ssh7742="ssh 192.168.1.105"
-alias ssh7742_from_home="ssh 192.168.191.66"
+alias sftp7742="sftp czc@10.168.1.169"
+alias sftp7742_from_home="sftp czc@172.16.0.69"
+alias ssh7742="ssh 10.168.1.169"
+alias ssh7742_from_home="ssh 172.16.0.69"
 alias sshbnuz2="ssh czc@10.2.45.111"
 alias sftpbnuz2="sftp czc@10.2.45.111"
 alias sjesse="conda activate jesse"
@@ -48,11 +48,15 @@ alias unzip="unzip -O CP936"
 alias startthunar="systemctl --user restart gvfs-daemon.service"
 alias clashy="clashy --no-sandbox %U"
 alias icarogw="conda activate icarogw"
+alias icarogw2="conda activate icarogw2"
 alias binance="binance --no-sandbox"
 alias wemeet="LD_LIBRARY_PATH=/opt/wemeet/lib /opt/wemeet/bin/wemeetapp"
 alias changemac="sudo macchanger -r enp4s0"
 alias rsync_DW="rsync -azP czc@192.168.191.163:/home/czc/projects/working/pta/domain_wall_ppta_dr2/ /home/czc/projects/working/pta/domain_wall_ppta_dr2/"
 alias toyoutube="ffmpeg  -framerate 30 -f x11grab -i :0.0 -f pulse -i default -c:v libx264 -s 1920x1080 -r 60 -b:v 5000k  -crf 10 -vf format=yuv420p -c:a aac -b:a 128k -f flv rtmp://a.rtmp.youtube.com/live2/cutb-tugf-bt77-t71d-b89r"
+alias shutdown="shutdown -h 0"
+alias pbgui="conda activate pbgui"
+
 
 export JULIA_PKG_SERVER=https://mirrors.tuna.tsinghua.edu.cn/julia
 export BUNDLE_PATH=~/.gems
@@ -75,5 +79,5 @@ export PATH=$PATH:$HOME/opt/tempo2/bin
 #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opt/tempo2/lib:$HOME/opt/miniconda3/lib
 export CPATH=$CPATH:$HOME/opt/tempo2/include
 export PATH=$HOME/bin:$PATH
-export JULIA_NUM_THREADS=32
+export JULIA_NUM_THREADS=16
 export MKL_NUM_THREADS=1
