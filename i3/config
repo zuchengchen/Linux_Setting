@@ -254,7 +254,7 @@ bindsym $mod+Shift+f exec thunar
 bindsym $mod+Shift+M exec netease-cloud-music 
 
 # launch wechat	 
-bindsym $mod+Shift+w exec wechat
+bindsym $mod+Shift+w exec electronic-wechat-uos-bin
 #bindsym $mod+Shift+w exec wechat-uos 
 
 # launch qq
@@ -292,7 +292,8 @@ exec --no-startup-id nm-applet
 
 # start volume control
 #exec --no-startup-id pa-applet
-exec --no-startup-id volumeicon
+#exec --no-startup-id volumeicon
+exec espeak "random text" && volumeicon
 
 # switch to workspace
 #bindsym $mod+p workspace 11
@@ -322,3 +323,4 @@ exec --no-startup-id flameshot
 # autostart electronic-wechat 
 #exec --no-startup-id i3-msg "workspace $ws2; exec electronic-wechat"
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id i3-msg "workspace $ws2; exec electronic-wechat-uos-bin"
