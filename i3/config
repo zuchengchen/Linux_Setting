@@ -284,6 +284,9 @@ bindsym $mod+Shift+n exec notion-app
 # launch thunderbird 
 bindsym $mod+Shift+t exec thunderbird
  
+# launch tradingview
+bindsym $mod+Ctrl+t exec tradingview
+
 # launch slack 
 bindsym $mod+Shift+s exec slack 
 
