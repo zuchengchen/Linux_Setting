@@ -83,4 +83,8 @@ export CPATH=$CPATH:$HOME/opt/tempo2/include
 export PATH=$HOME/bin:$PATH
 export JULIA_NUM_THREADS=16
 export MKL_NUM_THREADS=1
+
+
+export XMODIFIERS="@im=fcitx"
+export QT_IM_MODULE="fcitx5"
 export OPENBLAS_NUM_THREADS=1
