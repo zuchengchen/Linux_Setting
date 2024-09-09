@@ -58,7 +58,7 @@ alias shutdown="shutdown -h 0"
 alias pbgui="conda activate pbgui"
 alias d2l="conda activate d2l"
 alias pgygf="pgyvisitor login -u 47471962:001 -p P_illb013"
-
+alias sshvultr="ssh root@45.63.121.116"
 
 export JULIA_PKG_SERVER=https://mirrors.tuna.tsinghua.edu.cn/julia
 export BUNDLE_PATH=~/.gems
