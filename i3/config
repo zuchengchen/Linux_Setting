@@ -253,9 +253,8 @@ bindsym $mod+Shift+f exec thunar
 #bindsym $mod+Shift+M exec petal 
 bindsym $mod+Shift+M exec netease-cloud-music 
 
-# launch wechat	 
-bindsym $mod+Shift+w exec electronic-wechat-uos-bin
-#bindsym $mod+Shift+w exec wechat-uos 
+# launch wechat
+bindsym $mod+Shift+w exec wechat-uos-qt
 
 # launch qq
 bindsym $mod+Shift+q exec linuxqq
@@ -323,5 +322,7 @@ exec --no-startup-id i3-msg "workspace $ws2; exec blueman-manager"
 # autostart flameshot
 exec --no-startup-id flameshot
 
-# autostart electronic-wechat 
-exec --no-startup-id i3-msg "workspace $ws2; exec electronic-wechat-uos-bin"
+# autostart wechat 
+exec --no-startup-id i3-msg "workspace $ws2; exec wechat-uos-qt "
+#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#exec --no-startup-id i3-msg "workspace $ws2; exec electronic-wechat-uos-bin"
