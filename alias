@@ -58,6 +58,7 @@ alias d2l="conda activate d2l"
 alias pptadr3="conda activate ppta_dr3"
 alias pgygf="pgyvisitor login -u 47471962:001 -p P_illb013"
 alias sshvultr="ssh root@45.63.121.116"
+alias keepscreen="xset s off -dpms"
 
 export JULIA_PKG_SERVER=https://mirrors.tuna.tsinghua.edu.cn/julia
 export BUNDLE_PATH=~/.gems
@@ -80,7 +81,7 @@ export PATH=$PATH:$HOME/opt/tempo2/bin
 #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opt/tempo2/lib:$HOME/opt/miniconda3/lib
 export CPATH=$CPATH:$HOME/opt/tempo2/include
 export PATH=$HOME/bin:$PATH
-export JULIA_NUM_THREADS=16
+export JULIA_NUM_THREADS=32
 export MKL_NUM_THREADS=1
 
 
