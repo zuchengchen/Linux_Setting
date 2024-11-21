@@ -59,6 +59,7 @@ alias pptadr3="conda activate ppta_dr3"
 alias pgygf="pgyvisitor login -u 47471962:001 -p P_illb013"
 alias sshvultr="ssh root@45.63.121.116"
 alias keepscreen="xset s off -dpms"
+alias lockscreen="xset +dpms&& xset dpms 2000"
 
 export JULIA_PKG_SERVER=https://mirrors.tuna.tsinghua.edu.cn/julia
 export BUNDLE_PATH=~/.gems
