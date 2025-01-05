@@ -281,7 +281,10 @@ bindsym $mod+Ctrl+c exec code
 bindsym $mod+Shift+n exec notion-app 
 
 # launch thunderbird 
-bindsym $mod+Shift+t exec thunderbird
+# bindsym $mod+Shift+t exec thunderbird
+
+# launch tradingview
+bindsym $mod+Shift+t exec tradingview
  
 # launch tradingview
 bindsym $mod+Ctrl+t exec tradingview
