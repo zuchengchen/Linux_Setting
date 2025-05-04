@@ -22,10 +22,12 @@ UUID=75fb13e5-ebe9-4d07-9550-d9613912ccd1 /home/bear/projects          ext4    d
 # install fcitx
 sudo pacman -S fcitx-im
 sudo pacman -S fcitx-configtool
-# vi .profile
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=”@im=fcitx”
+# vi /etc/environment 
+XIM="fcitx"
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+
 
 # firefox
 sudo pacman -S firefox

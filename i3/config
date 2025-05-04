@@ -311,7 +311,7 @@ exec espeak "random text" && volumeicon
 exec_always --no-startup-id numlockx on
 
 # autostart fcitx
-exec --no-startup-id fcitx
+exec --no-startup-id fcitx5 -d
 
 # autostart terminal 
 exec --no-startup-id i3-msg "workspace $ws1; exec i3-sensible-terminal" 
