@@ -60,7 +60,7 @@ alias pgygf="pgyvisitor login -u 47471962:001 -p P_illb013"
 alias sshvultr="ssh root@45.63.121.116"
 alias keepscreen="xset s off -dpms"
 alias lockscreen="xset +dpms&& xset dpms 2000 3000 4000"
-
+alias gitpush='git pull && git add . && git commit -am "update" && git push'
 export JULIA_PKG_SERVER=https://mirrors.tuna.tsinghua.edu.cn/julia
 export BUNDLE_PATH=~/.gems
 export PATH=$PATH:/home/czc/.local/share/gem/ruby/3.0.0/bin
