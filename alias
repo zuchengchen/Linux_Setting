@@ -62,6 +62,7 @@ alias keepscreen="xset s off -dpms"
 alias lockscreen="xset +dpms&& xset dpms 2000 3000 4000"
 alias gitpush='git pull && git add . && git commit -am "update" && git push'
 alias suspend="systemctl hibernate"
+alias sshnube1c="ssh 205.198.88.207"
 
 export JULIAUP_SERVER=https://mirror.nju.edu.cn/julia-releases/ # Linux & macOS
 export JULIA_PKG_SERVER=https://mirrors.nju.edu.cn/julia
