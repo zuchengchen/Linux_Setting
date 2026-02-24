@@ -204,9 +204,8 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status --config ~/.config/i3/i3status.conf
-		font pango:Hack, FontAwesome 9 
-       # status_command py3status -c ~/.config/i3/i3status.conf
+        status_command i3blocks -c ~/.config/i3blocks/config
+		font pango:Hack Nerd Font, Noto Color Emoji 9 
 		position bottom
         colors  {
                 background #0F0F0F
@@ -224,9 +223,9 @@ bindsym XF86MonBrightnessDown   exec xbacklight -dec 10
 bindsym XF86MonBrightnessUp     exec xbacklight -inc 10
 
 #The following configurations can be added to enable audio keys.
-bindsym XF86AudioLowerVolume    exec $psst pactl set-sink-volume @DEFAULT_SINK@ -5% && pactl set-sink-mute @DEFAULT_SINK@ 0 $update
-bindsym XF86AudioRaiseVolume    exec $psst pactl set-sink-volume @DEFAULT_SINK@ +5% && pactl set-sink-mute @DEFAULT_SINK@ 0 $update
-bindsym XF86AudioMute           exec $psst pactl set-sink-mute @DEFAULT_SINK@ toggle $update
+bindsym XF86AudioLowerVolume    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && pactl set-sink-mute @DEFAULT_SINK@ 0 && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioRaiseVolume    exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && pactl set-sink-mute @DEFAULT_SINK@ 0 && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute           exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+10 i3blocks
 
 # lock screen
 bindsym $mod+Shift+x exec i3lock
@@ -333,4 +332,11 @@ exec --no-startup-id i3-msg "workspace $ws2; exec wechat"
 
 # keyring
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh,secrets,pkcs11
+
+# 空白工作区炫酷显示 (已禁用)
+# exec_always --no-startup-id bash -c 'DISPLAY_TOOL=btop ~/.config/i3/scripts/empty-ws-monitor.sh'
+
+# 快捷键切换显示模式 (已禁用btop)
+# bindsym $mod+Shift+F1 exec bash -c "pkill -f empty-ws-monitor.sh; rm -f /tmp/i3-empty-ws-display.lock; DISPLAY_TOOL=btop ~/.config/i3/scripts/empty-ws-monitor.sh & notify-send '系统显示' '已切换到 btop 模式'"
+bindsym $mod+Shift+F2 exec bash -c "pkill -f empty-ws-monitor.sh; rm -f /tmp/i3-empty-ws-display.lock; DISPLAY_TOOL=fastfetch ~/.config/i3/scripts/empty-ws-monitor.sh & notify-send '系统显示' '已切换到 fastfetch 模式'"
 
