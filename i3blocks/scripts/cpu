@@ -1,0 +1,41 @@
+#!/bin/bash
+# CPU usage display for i3blocks
+
+# Get CPU usage
+read -r cpu a b c previdle rest < /proc/stat
+prevtotal=$((a+b+c+previdle))
+sleep 0.5
+read -r cpu a b c idle rest < /proc/stat
+total=$((a+b+c+idle))
+diff_total=$((total-prevtotal))
+diff_idle=$((idle-previdle))
+usage=$((100*(diff_total-diff_idle)/diff_total))
+
+# Get CPU temperature (try different methods)
+if [ -f /sys/class/thermal/thermal_zone0/temp ]; then
+    temp=$(cat /sys/class/thermal/thermal_zone0/temp)
+    temp=$((temp/1000))
+elif command -v sensors &> /dev/null; then
+    temp=$(sensors | grep -m1 'Package id 0' | grep -oP '\+\K\d+' | head -1)
+else
+    temp="?"
+fi
+
+# Set color based on usage
+if [ "$usage" -ge 90 ]; then
+    color="#FF5555"
+    icon="🔥"
+elif [ "$usage" -ge 70 ]; then
+    color="#FFB86C"
+    icon="⚡"
+elif [ "$usage" -ge 50 ]; then
+    color="#F1FA8C"
+    icon="📈"
+else
+    color="#50FA7B"
+    icon="💚"
+fi
+
+echo "CPU $usage% ${temp}°C"
+echo "CPU $usage%"
+echo "$color"

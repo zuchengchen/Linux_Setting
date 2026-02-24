@@ -1,0 +1,71 @@
+#!/bin/bash
+# Volume block for i3blocks
+# Click: left = mute toggle, right = pavucontrol
+# Scroll: up = volume up, down = volume down
+
+# Get current volume
+get_volume() {
+    pamixer --get-volume 2>/dev/null || pactl get-sink-volume @DEFAULT_SINK@ | grep -oP '\d+(?=%)' | head -1
+}
+
+# Get mute status
+get_mute() {
+    if command -v pamixer &>/dev/null; then
+        pamixer --get-mute
+    else
+        pactl get-sink-mute @DEFAULT_SINK@ | grep -q "yes" && echo "true" || echo "false"
+    fi
+}
+
+# Set volume
+set_volume() {
+    pactl set-sink-volume @DEFAULT_SINK@ "$1"
+}
+
+# Toggle mute
+toggle_mute() {
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+}
+
+# Handle click events FIRST, then read state
+case $BLOCK_BUTTON in
+    1)  # Left click - toggle mute
+        toggle_mute
+        ;;
+    3)  # Right click - open pavucontrol
+        pavucontrol &
+        ;;
+    4)  # Scroll up - increase volume
+        set_volume "+5%"
+        ;;
+    5)  # Scroll down - decrease volume
+        set_volume "-5%"
+        ;;
+esac
+
+VOL=$(get_volume)
+MUTE=$(get_mute)
+
+# Output
+if [ "$MUTE" = "true" ]; then
+    echo "🔇 muted"
+    echo "🔇 muted"
+    echo "#FF6B6B"
+else
+    if [ "$VOL" -gt 50 ]; then
+        ICON="🔊"
+    elif [ "$VOL" -gt 0 ]; then
+        ICON="🔉"
+    else
+        ICON="🔈"
+    fi
+    echo "$ICON $VOL%"
+    echo "$ICON $VOL%"
+    if [ "$VOL" -gt 80 ]; then
+        echo "#FF6B6B"
+    elif [ "$VOL" -lt 20 ]; then
+        echo "#FFA500"
+    else
+        echo "#00FF00"
+    fi
+fi

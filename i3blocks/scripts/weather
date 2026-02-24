@@ -1,0 +1,13 @@
+#!/bin/bash
+# 简洁天气脚本 - 显示城市和温度
+# 使用方法：修改城市名为你所在的城市
+CITY="Putian"  # 改成你的城市，如 Shanghai、Guangzhou 等
+
+# 格式：城市 + 天气 + 温度
+WEATHER=$(curl -s "wttr.in/${CITY}?format=%l:+%C+%t" 2>/dev/null)
+
+if [ $? -eq 0 ] && [ -n "$WEATHER" ]; then
+    echo "$WEATHER"
+else
+    echo "🌤️ N/A"
+fi

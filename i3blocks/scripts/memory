@@ -1,0 +1,34 @@
+#!/bin/bash
+# Memory usage display for i3blocks
+
+# Get memory info (columns: total used free shared buff/cache available)
+read -r _ total used _ _ _ available < <(free -m | grep Mem)
+
+# 实际可用 = available，实际使用 = total - available
+real_used=$((total - available))
+used_percent=$((100 * real_used / total))
+
+# Human readable - convert MB to GB
+total_gb=$(echo "scale=1;$total/1024" | bc)
+used_gb=$(echo "scale=1;$real_used/1024" | bc)
+total_str="${total_gb}G"
+used_str="${used_gb}G"
+
+# Set color and icon based on usage
+if [ "$used_percent" -ge 90 ]; then
+    color="#FF5555"
+    icon="🔴"
+elif [ "$used_percent" -ge 70 ]; then
+    color="#FFB86C"
+    icon="🟠"
+elif [ "$used_percent" -ge 50 ]; then
+    color="#F1FA8C"
+    icon="🟡"
+else
+    color="#50FA7B"
+    icon="🟢"
+fi
+
+echo "RAM $used_str/$total_str"
+echo "RAM $used_percent%"
+echo "$color"

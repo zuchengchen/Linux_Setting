@@ -1,0 +1,14 @@
+#!/bin/bash
+# Battery status script for i3blocks
+
+BATTERY_INFO=$(acpi -b)
+PERCENT=$(echo "$BATTERY_INFO" | grep -oP '\d+(?=%)' | head -1)
+STATUS=$(echo "$BATTERY_INFO" | grep -oP '(Charging|Discharging|Full)')
+
+if [[ "$STATUS" == "Charging" ]]; then
+    echo "⚡${PERCENT}%"
+elif [[ "$STATUS" == "Full" ]]; then
+    echo "✅${PERCENT}%"
+else
+    echo "🔋${PERCENT}%"
+fi
