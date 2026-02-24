@@ -94,3 +94,11 @@ export MKL_NUM_THREADS=1
 export XMODIFIERS="@im=fcitx"
 export QT_IM_MODULE="fcitx5"
 export OPENBLAS_NUM_THREADS=1
+export PATH=~/.npm-global/bin:$PATH
+#export ANTHROPIC_AUTH_TOKEN=sk-WbAHwcs0IjL66sad51skmFM6VMaQeBoceBZF6r4tcRuGcjDN
+#export ANTHROPIC_BASE_URL=https://anyrouter.top
+#export ANTHROPIC_BASE_URL="https://ai-in.one"
+#export ANTHROPIC_AUTH_TOKEN="sk-064f1b5d06beb7554312b7ec9cb4c54493a1c884b8f46dc0290e1ddc479b330b"
+#export ANTHROPIC_BASE_URL="https://openrouter.ai/api"
+#export ANTHROPIC_AUTH_TOKEN="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"
+#export ANTHROPIC_API_KEY="" # Important: Must be explicitly empty

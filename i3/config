@@ -205,7 +205,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3blocks -c ~/.config/i3blocks/config
-		font pango:Hack Nerd Font, Noto Color Emoji 9 
+		font pango:Hack Nerd Font, Noto Color Emoji 12
 		position bottom
         colors  {
                 background #0F0F0F
