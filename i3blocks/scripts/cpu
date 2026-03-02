@@ -11,12 +11,13 @@ diff_total=$((total-prevtotal))
 diff_idle=$((idle-previdle))
 usage=$((100*(diff_total-diff_idle)/diff_total))
 
-# Get CPU temperature (try different methods)
-if [ -f /sys/class/thermal/thermal_zone0/temp ]; then
+# Get CPU temperature (try k10temp for AMD CPU)
+if [ -f /sys/class/hwmon/hwmon1/temp1_input ]; then
+    temp=$(cat /sys/class/hwmon/hwmon1/temp1_input)
+    temp=$((temp/1000))
+elif [ -f /sys/class/thermal/thermal_zone0/temp ]; then
     temp=$(cat /sys/class/thermal/thermal_zone0/temp)
     temp=$((temp/1000))
-elif command -v sensors &> /dev/null; then
-    temp=$(sensors | grep -m1 'Package id 0' | grep -oP '\+\K\d+' | head -1)
 else
     temp="?"
 fi

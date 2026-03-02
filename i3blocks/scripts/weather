@@ -1,13 +1,84 @@
 #!/bin/bash
-# 简洁天气脚本 - 显示城市和温度
-# 使用方法：修改城市名为你所在的城市
-CITY="Changde+Wuling"  # 改成你的城市，如 Shanghai、Guangzhou 等
+# 天气脚本 - 根据IP地址自动获取位置并显示天气（多API备用方案）
 
-# 格式：城市 + 天气 + 温度
-WEATHER=$(curl -s "wttr.in/${CITY}?format=%l:+%C+%t" 2>/dev/null)
+# 步骤1: 根据IP地址获取位置信息
+LOCATION_DATA=$(timeout 10 curl -s "http://ip-api.com/json/?lang=zh-CN" 2>/dev/null)
 
-if [ $? -eq 0 ] && [ -n "$WEATHER" ]; then
-    echo "$WEATHER"
+if [ $? -eq 0 ] && [ -n "$LOCATION_DATA" ]; then
+    # 解析城市名称
+    CITY=$(echo "$LOCATION_DATA" | jq -r '.city // empty' 2>/dev/null)
+    
+    if [ -z "$CITY" ] || [ "$CITY" = "null" ]; then
+        CITY="未知"
+    fi
 else
-    echo "🌤️ N/A"
+    CITY="未知"
 fi
+
+# 步骤2: 获取天气数据（多个备用方案）
+WEATHER=""
+
+if [ "$CITY" != "未知" ]; then
+    # 根据城市名获取城市代码（常见城市）
+    case "$CITY" in
+        "长沙") CITY_ID="101250101" ;;
+        "北京") CITY_ID="101010100" ;;
+        "上海") CITY_ID="101020100" ;;
+        "广州") CITY_ID="101280101" ;;
+        "深圳") CITY_ID="101280601" ;;
+        "常德") CITY_ID="101250601" ;;
+        "杭州") CITY_ID="101210101" ;;
+        "成都") CITY_ID="101270101" ;;
+        "武汉") CITY_ID="101200101" ;;
+        "西安") CITY_ID="101110101" ;;
+        "南京") CITY_ID="101190101" ;;
+        "重庆") CITY_ID="101040100" ;;
+        "天津") CITY_ID="101030100" ;;
+        "苏州") CITY_ID="101190401" ;;
+        "郑州") CITY_ID="101180101" ;;
+        *) CITY_ID="101250101" ;;  # 默认长沙
+    esac
+    
+    # 方案1: 小米天气API（免费，无需注册）
+    WEATHER_DATA=$(timeout 10 curl -s "http://weatherapi.market.xiaomi.com/wtr-v2/weather?cityId=${CITY_ID}" 2>/dev/null)
+    
+    if [ $? -eq 0 ] && [ -n "$WEATHER_DATA" ]; then
+        # 解析天气数据
+        TEMP=$(echo "$WEATHER_DATA" | jq -r '.realtime.temp // empty' 2>/dev/null)
+        WEATHER_DESC=$(echo "$WEATHER_DATA" | jq -r '.realtime.weather // empty' 2>/dev/null)
+        
+        if [ -n "$TEMP" ] && [ -n "$WEATHER_DESC" ]; then
+            WEATHER="🌤️ $CITY $WEATHER_DESC $TEMP°C"
+        fi
+    fi
+    
+    # 方案2: 如果方案1失败，使用 wttr.in（备用）
+    if [ -z "$WEATHER" ] || [ "$WEATHER" = "" ]; then
+        WEATHER_WTTR=$(timeout 8 curl -s "http://wttr.in/${CITY}?lang=zh&format=%l:+%C+%t" 2>/dev/null)
+        
+        if [ -n "$WEATHER_WTTR" ] && [ "$WEATHER_WTTR" != "" ]; then
+            WEATHER="$WEATHER_WTTR"
+        fi
+    fi
+    
+    # 方案3: 如果方案2也失败，使用中国天气网（备用）
+    if [ -z "$WEATHER" ] || [ "$WEATHER" = "" ]; then
+        WEATHER_DATA2=$(timeout 10 curl -s "http://wthrcdn.etouch.cn/weather_mini?city=${CITY}" 2>/dev/null)
+        
+        if [ $? -eq 0 ] && [ -n "$WEATHER_DATA2" ]; then
+            TEMP=$(echo "$WEATHER_DATA2" | jq -r '.data.wendu // empty' 2>/dev/null)
+            WEATHER_DESC=$(echo "$WEATHER_DATA2" | jq -r '.data.forecast[0].type // empty' 2>/dev/null)
+            
+            if [ -n "$TEMP" ] && [ -n "$WEATHER_DESC" ]; then
+                WEATHER="🌤️ $CITY $WEATHER_DESC $TEMP°C"
+            fi
+        fi
+    fi
+fi
+
+# 如果所有方案都失败，显示默认
+if [ -z "$WEATHER" ] || [ "$WEATHER" = "" ]; then
+    WEATHER="🌤️ $CITY"
+fi
+
+echo "$WEATHER"
