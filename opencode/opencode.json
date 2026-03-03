@@ -1,0 +1,20 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "anthropic": {
+      "options": {
+        "baseURL": "https://yunyi.cfd/claude/v1",
+        "apiKey": "KACK87RC-YEC0-Y49A-9X0E-K43DBXWY27TK"
+      }
+    },
+    "zhipuai": {
+      "options": {
+        "baseURL": "https://cloud.hongqiye.com:3300/api/v1",
+        "apiKey": "cr_dbc684dbd3b1d49131362414031a61814ab16ff29fe28371ee964daedea86608"
+      }
+    }
+   },
+  "plugin": [
+    "oh-my-opencode@latest"
+  ]
+}
