@@ -1,20 +1,71 @@
 {
-  "$schema": "https://opencode.ai/config.json",
-  "provider": {
-    "anthropic": {
-      "options": {
-        "baseURL": "https://yunyi.cfd/claude/v1",
-        "apiKey": "KACK87RC-YEC0-Y49A-9X0E-K43DBXWY27TK"
-      }
-    },
+    "$schema": "https://opencode.ai/config.json",
+    "provider": {           
     "zhipuai": {
       "options": {
-        "baseURL": "https://cloud.hongqiye.com:3300/api/v1",
-        "apiKey": "cr_dbc684dbd3b1d49131362414031a61814ab16ff29fe28371ee964daedea86608"
+        "baseURL": "http://localhost:3300/v1"
       }
+    },
+        "baishan": {
+            "npm": "@ai-sdk/anthropic",
+            "name": "BAISHAN",
+            "options": {
+                "baseURL": "https://api.edgefn.net/v1",
+                "apiKey": "sk-dnjhZXBnpHiLGQrcF995E4D6E4Bc4142843935F2D4B8Eb70"
+            },
+            "models": {
+                "MiniMax-M2.5": {
+                    "name": "MiniMax M2.5",
+                    "modalities": {
+                        "input": ["text"],
+                        "output": ["text"]
+                    },
+                    "options": {
+                        "thinking": {
+                            "type": "enabled",
+                            "budgetTokens": 8192
+                        }
+                    },
+                    "limit": {
+                        "context": 204800,
+                        "output": 131072
+                    }
+                },
+                "glm-5": {
+                    "name": "GLM-5",
+                    "modalities": {
+                        "input": ["text"],
+                        "output": ["text"]
+                    },
+                    "options": {
+                        "thinking": {
+                            "type": "enabled",
+                            "budgetTokens": 8192
+                        }
+                    },
+                    "limit": {
+                        "context": 202752,
+                        "output": 16384
+                    }
+                },
+                "kimi-k2.5": {
+                    "name": "Kimi K2.5",
+                    "modalities": {
+                        "input": ["text", "image"],
+                        "output": ["text"]
+                    },
+                    "options": {
+                        "thinking": {
+                            "type": "enabled",
+                            "budgetTokens": 8192
+                        }
+                    },
+                    "limit": {
+                        "context": 262144,
+                        "output": 32768
+                    }
+                }
+            }
+        }
     }
-   },
-  "plugin": [
-    "oh-my-opencode@latest"
-  ]
 }

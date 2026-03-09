@@ -2,51 +2,51 @@
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
   "agents": {
     "sisyphus": {
-      "model": "zhipuai/glm-5"
+      "model": "baishan/glm-5"
     },
     "oracle": {
-      "model": "zhipuai/glm-5"
+      "model": "baishan/glm-5"
     },
     "librarian": {
-      "model": "zhipuai/glm-5"
+      "model": "baishan/glm-5"
     },
     "explore": {
-      "model": "zhipuai/glm-5"
+      "model": "baishan/glm-5"
     },
     "multimodal-looker": {
-      "model": "zhipuai/glm-5"
+      "model": "baishan/glm-5"
     },
     "prometheus": {
-      "model": "zhipuai/glm-5"
+      "model": "baishan/glm-5"
     },
     "metis": {
-      "model": "zhipuai/glm-5"
+      "model": "baishan/glm-5"
     },
     "momus": {
-      "model": "zhipuai/glm-5"
+      "model": "baishan/glm-5"
     },
     "atlas": {
-      "model": "zhipuai/glm-5"
+      "model": "baishan/glm-5"
     }
   },
   "categories": {
     "visual-engineering": {
-      "model": "zhipuai/glm-5"
+      "model": "baishan/glm-5"
     },
     "ultrabrain": {
-      "model": "zhipuai/glm-5"
+      "model": "baishan/glm-5"
     },
     "quick": {
-      "model": "zhipuai/glm-5"
+      "model": "baishan/glm-5"
     },
     "unspecified-low": {
-      "model": "zhipuai/glm-5"
+      "model": "baishan/glm-5"
     },
     "unspecified-high": {
-      "model": "zhipuai/glm-5"
+      "model": "baishan/glm-5"
     },
     "writing": {
-      "model": "zhipuai/glm-5"
+      "model": "baishan/glm-5"
     }
   }
 }
