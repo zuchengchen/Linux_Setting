@@ -2,51 +2,51 @@
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
   "agents": {
     "sisyphus": {
-      "model": "baishan/glm-5"
+      "model": "baidu/glm-5"
     },
     "oracle": {
-      "model": "baishan/glm-5"
+      "model": "baidu/glm-5"
     },
     "librarian": {
-      "model": "baishan/glm-5"
+      "model": "baidu/glm-5"
     },
     "explore": {
-      "model": "baishan/glm-5"
+      "model": "baidu/glm-5"
     },
     "multimodal-looker": {
-      "model": "baishan/glm-5"
+      "model": "baidu/glm-5"
     },
     "prometheus": {
-      "model": "baishan/glm-5"
+      "model": "baidu/glm-5"
     },
     "metis": {
-      "model": "baishan/glm-5"
+      "model": "baidu/glm-5"
     },
     "momus": {
-      "model": "baishan/glm-5"
+      "model": "baidu/glm-5"
     },
     "atlas": {
-      "model": "baishan/glm-5"
+      "model": "baidu/glm-5"
     }
   },
   "categories": {
     "visual-engineering": {
-      "model": "baishan/glm-5"
+      "model": "baidu/glm-5"
     },
     "ultrabrain": {
-      "model": "baishan/glm-5"
+      "model": "baidu/glm-5"
     },
     "quick": {
-      "model": "baishan/glm-5"
+      "model": "baidu/glm-5"
     },
     "unspecified-low": {
-      "model": "baishan/glm-5"
+      "model": "baidu/glm-5"
     },
     "unspecified-high": {
-      "model": "baishan/glm-5"
+      "model": "baidu/glm-5"
     },
     "writing": {
-      "model": "baishan/glm-5"
+      "model": "baidu/glm-5"
     }
   }
 }
