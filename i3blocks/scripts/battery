@@ -3,12 +3,12 @@
 
 BATTERY_INFO=$(acpi -b)
 PERCENT=$(echo "$BATTERY_INFO" | grep -oP '\d+(?=%)' | head -1)
-STATUS=$(echo "$BATTERY_INFO" | grep -oP '(Charging|Discharging|Full)')
+STATUS=$(echo "$BATTERY_INFO" | grep -oP '(Charging|Discharging|Full|Not charging)')
 
 if [[ "$STATUS" == "Charging" ]]; then
     echo "⚡${PERCENT}%"
-elif [[ "$STATUS" == "Full" ]]; then
-    echo "✅${PERCENT}%"
+elif [[ "$STATUS" == "Full" ]] || [[ "$STATUS" == "Not charging" ]]; then
+    echo "🔋${PERCENT}%"
 else
     echo "🔋${PERCENT}%"
 fi

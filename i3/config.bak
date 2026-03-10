@@ -244,7 +244,7 @@ bindsym $mod+x exec texstudio
 bindsym $mod+c exec code 
 
 # launch mathematica 
-bindsym $mod+m exec WolframNB 
+bindsym $mod+m exec Mathematica 
 
 # launch thunar--file browser
 bindsym $mod+Shift+f exec thunar
@@ -281,7 +281,10 @@ bindsym $mod+Ctrl+c exec code
 bindsym $mod+Shift+n exec notion-app 
 
 # launch thunderbird 
-bindsym $mod+Shift+t exec thunderbird
+# bindsym $mod+Shift+t exec thunderbird
+
+# launch tradingview
+bindsym $mod+Shift+t exec tradingview
  
 # launch tradingview
 bindsym $mod+Ctrl+t exec tradingview
@@ -292,8 +295,7 @@ bindsym $mod+Shift+s exec slack
 # enable network
 exec --no-startup-id nm-applet
 
-# start volume control
-#exec --no-startup-id pa-applet
+# start Volume control
 #exec --no-startup-id volumeicon
 exec espeak "random text" && volumeicon
 
@@ -308,7 +310,7 @@ exec espeak "random text" && volumeicon
 exec_always --no-startup-id numlockx on
 
 # autostart fcitx
-exec --no-startup-id fcitx5
+exec --no-startup-id fcitx5 -d
 
 # autostart terminal 
 exec --no-startup-id i3-msg "workspace $ws1; exec i3-sensible-terminal" 
@@ -325,5 +327,10 @@ exec --no-startup-id flameshot
 # autostart wechat 
 exec --no-startup-id i3-msg "workspace $ws2; exec wechat"
 #exec --no-startup-id i3-msg "workspace $ws2; exec wechat-uos-qt "
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #exec --no-startup-id i3-msg "workspace $ws2; exec electronic-wechat-uos-bin"
+
+
+# keyring
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh,secrets,pkcs11
+
