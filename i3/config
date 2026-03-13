@@ -341,3 +341,6 @@ exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh,secr
 # bindsym $mod+Shift+F1 exec bash -c "pkill -f empty-ws-monitor.sh; rm -f /tmp/i3-empty-ws-display.lock; DISPLAY_TOOL=btop ~/.config/i3/scripts/empty-ws-monitor.sh & notify-send '系统显示' '已切换到 btop 模式'"
 bindsym $mod+Shift+F2 exec bash -c "pkill -f empty-ws-monitor.sh; rm -f /tmp/i3-empty-ws-display.lock; DISPLAY_TOOL=fastfetch ~/.config/i3/scripts/empty-ws-monitor.sh & notify-send '系统显示' '已切换到 fastfetch 模式'"
 
+
+# screen blanking timeout (30 minutes)
+exec --no-startup-id xset s 1800 1800 dpms 1800 1800 1800

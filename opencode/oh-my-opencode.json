@@ -31,7 +31,7 @@
   },
   "categories": {
     "visual-engineering": {
-      "model": "baidu/glm-5"
+      "model": "openrouter/moonshotai/kimi-k2.5"
     },
     "ultrabrain": {
       "model": "baidu/glm-5"
