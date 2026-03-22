@@ -1,5 +1,11 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "compaction": {
+    "auto": true,
+    "strategy": "summarize",
+    "threshold": 0.8,
+    "prune_tool_outputs": true
+  },
   "provider": {
     "baidu": {
       "npm": "@ai-sdk/openai-compatible",
