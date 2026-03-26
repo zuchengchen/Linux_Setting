@@ -3,10 +3,6 @@
 
 separator_block_width=15
 
-[weather]
-command=~/.config/i3blocks/scripts/weather
-interval=1800
-
 [cpu]
 command=~/.config/i3blocks/scripts/cpu
 interval=2
