@@ -18,8 +18,12 @@
         "glm-5": {
           "name": "GLM-5",
           "modalities": {
-            "input": ["text"],
-            "output": ["text"]
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
           },
           "limit": {
             "context": 128000,
@@ -29,8 +33,12 @@
         "deepseek-v3.2": {
           "name": "DeepSeek-V3.2",
           "modalities": {
-            "input": ["text"],
-            "output": ["text"]
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
           },
           "limit": {
             "context": 64000,
@@ -40,8 +48,13 @@
         "kimi-k2.5": {
           "name": "Kimi-K2.5",
           "modalities": {
-            "input": ["text", "image"],
-            "output": ["text"]
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
           },
           "limit": {
             "context": 262144,
@@ -51,8 +64,12 @@
         "minimax-m2.5": {
           "name": "MiniMax-M2.5",
           "modalities": {
-            "input": ["text"],
-            "output": ["text"]
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
           },
           "limit": {
             "context": 204800,
@@ -72,8 +89,12 @@
         "minimax-m2.5": {
           "name": "MiniMax M2.5",
           "modalities": {
-            "input": ["text"],
-            "output": ["text"]
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
           },
           "options": {
             "thinking": {
@@ -89,8 +110,12 @@
         "glm-5": {
           "name": "GLM-5",
           "modalities": {
-            "input": ["text"],
-            "output": ["text"]
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
           },
           "options": {
             "thinking": {
@@ -106,8 +131,13 @@
         "kimi-k2.5": {
           "name": "Kimi K2.5",
           "modalities": {
-            "input": ["text", "image"],
-            "output": ["text"]
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
           },
           "options": {
             "thinking": {
@@ -126,5 +156,108 @@
   "plugin": [
     "oh-my-opencode",
     "@tarquinen/opencode-dcp@latest"
-  ]
+  ],
+  "permission": {
+    "read": {
+      "/home/czc/.config/opencode/get-physics-done/*": "allow"
+    },
+    "external_directory": {
+      "/home/czc/.config/opencode/get-physics-done/*": "allow"
+    }
+  },
+  "mcp": {
+    "gpd-conventions": {
+      "type": "local",
+      "command": [
+        "/home/czc/.gpd/venv/bin/python",
+        "-m",
+        "gpd.mcp.servers.conventions_server"
+      ],
+      "environment": {
+        "LOG_LEVEL": "WARNING"
+      },
+      "enabled": true
+    },
+    "gpd-errors": {
+      "type": "local",
+      "command": [
+        "/home/czc/.gpd/venv/bin/python",
+        "-m",
+        "gpd.mcp.servers.errors_mcp"
+      ],
+      "environment": {
+        "LOG_LEVEL": "WARNING"
+      },
+      "enabled": true
+    },
+    "gpd-patterns": {
+      "type": "local",
+      "command": [
+        "/home/czc/.gpd/venv/bin/python",
+        "-m",
+        "gpd.mcp.servers.patterns_server"
+      ],
+      "environment": {
+        "LOG_LEVEL": "WARNING"
+      },
+      "enabled": true
+    },
+    "gpd-protocols": {
+      "type": "local",
+      "command": [
+        "/home/czc/.gpd/venv/bin/python",
+        "-m",
+        "gpd.mcp.servers.protocols_server"
+      ],
+      "environment": {
+        "LOG_LEVEL": "WARNING"
+      },
+      "enabled": true
+    },
+    "gpd-skills": {
+      "type": "local",
+      "command": [
+        "/home/czc/.gpd/venv/bin/python",
+        "-m",
+        "gpd.mcp.servers.skills_server"
+      ],
+      "environment": {
+        "LOG_LEVEL": "WARNING"
+      },
+      "enabled": true
+    },
+    "gpd-state": {
+      "type": "local",
+      "command": [
+        "/home/czc/.gpd/venv/bin/python",
+        "-m",
+        "gpd.mcp.servers.state_server"
+      ],
+      "environment": {
+        "LOG_LEVEL": "WARNING"
+      },
+      "enabled": true
+    },
+    "gpd-verification": {
+      "type": "local",
+      "command": [
+        "/home/czc/.gpd/venv/bin/python",
+        "-m",
+        "gpd.mcp.servers.verification_server"
+      ],
+      "environment": {
+        "LOG_LEVEL": "WARNING"
+      },
+      "enabled": true
+    },
+    "gpd-arxiv": {
+      "type": "local",
+      "command": [
+        "/home/czc/.gpd/venv/bin/python",
+        "-m",
+        "arxiv_mcp_server"
+      ],
+      "enabled": true
+    }
+  }
 }
