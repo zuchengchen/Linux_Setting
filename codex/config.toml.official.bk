@@ -1,5 +1,5 @@
 model = "gpt-5.4"
-model_reasoning_effort = "xhigh"
+model_reasoning_effort = "high"
 model_context_window = 900000
 model_auto_compact_token_limit = 850000
 approval_policy = "never"
@@ -39,6 +39,12 @@ trust_level = "trusted"
 trust_level = "trusted"
 
 [projects."/home/czc/projects/working/test/test3"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/massive_gravity_orf"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/math_phy_solution"]
 trust_level = "trusted"
 
 [features]
@@ -202,3 +208,9 @@ config_file = "agents/gpd-verifier.toml"
 
 [notice]
 hide_rate_limit_model_nudge = true
+
+[plugins."github@openai-curated"]
+enabled = true
+
+[plugins."google-drive@openai-curated"]
+enabled = true

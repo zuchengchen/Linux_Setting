@@ -11,14 +11,14 @@ windows_wsl_setup_acknowledged = true
 model_verbosity = "high"
 personality = "friendly"
 plan_mode_reasoning_effort = "xhigh"
-service_tier = "fast"
 
 # GPD update notification
 notify = ["/home/czc/.gpd/venv/bin/python", "/home/czc/.codex/hooks/notify.py"]
+service_tier = "fast"
 
 [model_providers.oaiapi]
 name = "oaiapi"
-base_url = "https://codex.oaiapi.cn/v1"
+base_url = "https://www.tsapi.top/v1"
 wire_api = "responses"
 requires_openai_auth = true
 
@@ -44,6 +44,30 @@ trust_level = "trusted"
 trust_level = "trusted"
 
 [projects."/home/czc/projects/working/test/test2"]
+trust_level = "trusted"
+
+[projects."/home/czc/.codex"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/math_phy_solution"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/massive_gravity_orf"]
+trust_level = "trusted"
+
+[projects."/home/czc/Downloads/test/test/main"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/gpd_tutorial"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/translation/systematic_trading"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/codex_cli_guide"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/pta/massive_gravity_orf"]
 trust_level = "trusted"
 
 [features]
