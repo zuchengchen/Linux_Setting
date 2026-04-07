@@ -70,6 +70,39 @@ trust_level = "trusted"
 [projects."/home/czc/projects/working/pta/massive_gravity_orf"]
 trust_level = "trusted"
 
+[projects."/home/czc/projects/working/massive_gravity_orf_codex"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/test/test3"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/test"]
+trust_level = "trusted"
+
+[projects."/home/czc/Downloads/test/review"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/done/Linux_Setting"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/test/QM"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/translation/QM_Shankar"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/translation/QFT_Anthony"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/gpd_projects/fT_massive_gravity"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/gpd_projects/GW_energy_massive_gravity"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/gpd_projects/GW_energy_massive_gravity_general_background"]
+trust_level = "trusted"
+
 [features]
 # GPD multi-agent support
 multi_agent = true

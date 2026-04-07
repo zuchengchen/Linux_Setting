@@ -229,7 +229,7 @@ bindsym XF86AudioRaiseVolume    exec --no-startup-id pactl set-sink-volume @DEFA
 bindsym XF86AudioMute           exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+10 i3blocks
 
 # lock screen
-bindsym $mod+Shift+x exec i3lock
+bindsym $mod+Shift+x exec --no-startup-id i3lock -c 000000
 
 # launch firefox 
 bindsym $mod+b exec firefox
