@@ -21,6 +21,9 @@ name = "oaiapi"
 base_url = "http://23.95.72.120:8320/v1"
 wire_api = "responses"
 requires_openai_auth = true
+request_max_retries = 10
+stream_max_retries = 10
+stream_idle_timeout_ms = 600000
 
 [windows]
 sandbox = "elevated"

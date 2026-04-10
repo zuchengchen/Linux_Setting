@@ -1,12 +1,8 @@
-# oh-my-codex top-level settings (must be before any [table])
-notify = ["node", "/home/czc/.local/lib/node_modules/oh-my-codex/dist/scripts/notify-hook.js"]
-model_reasoning_effort = "xhigh"
-developer_instructions = "You have oh-my-codex installed. AGENTS.md is your orchestration brain and the main orchestration surface. Use skill/keyword routing like $name plus spawned role-specialized subagents for specialized work. Codex native subagents are available via .codex/agents and may be used for independent parallel subtasks within a single session or team pane. Skills are loaded from installed SKILL.md files under .codex/skills, not from native agent TOMLs. Use workflow skills via $name when explicitly invoked or clearly routed by AGENTS.md. Treat installed prompts as narrower internal execution surfaces under AGENTS.md authority, even when user-facing docs prefer $name keywords."
-
 model_provider = "oaiapi"
 model = "gpt-5.4"
-model_context_window = 900000
-model_auto_compact_token_limit = 850000
+model_reasoning_effort = "medium"
+model_context_window = 10000000
+model_auto_compact_token_limit = 900000
 approval_policy = "never"
 sandbox_mode = "danger-full-access"
 network_access = "enabled"
@@ -17,17 +13,17 @@ personality = "friendly"
 plan_mode_reasoning_effort = "xhigh"
 
 # GPD update notification
+notify = ["/home/czc/.gpd/venv/bin/python", "/home/czc/.codex/hooks/notify.py"]
 service_tier = "fast"
 
 [model_providers.oaiapi]
 name = "oaiapi"
-base_url = "https://www.tsapi.top/v1"
+base_url = "https://api.vip1129.cc"
 wire_api = "responses"
 requires_openai_auth = true
 request_max_retries = 10
 stream_max_retries = 10
 stream_idle_timeout_ms = 600000
-
 
 [windows]
 sandbox = "elevated"
@@ -77,40 +73,19 @@ trust_level = "trusted"
 [projects."/home/czc/projects/working/pta/massive_gravity_orf"]
 trust_level = "trusted"
 
-[projects."/home/czc/projects/working/massive_gravity_orf_codex"]
-trust_level = "trusted"
-
-[projects."/home/czc/projects/working/test/test3"]
-trust_level = "trusted"
-
-[projects."/home/czc/projects/working/test"]
-trust_level = "trusted"
-
-[projects."/home/czc/Downloads/test/review"]
-trust_level = "trusted"
-
-[projects."/home/czc/projects/done/Linux_Setting"]
-trust_level = "trusted"
-
-[projects."/home/czc/projects/working/test/QM"]
-trust_level = "trusted"
-
-[projects."/home/czc/projects/working/translation/QM_Shankar"]
-trust_level = "trusted"
-
-[projects."/home/czc/projects/working/translation/QFT_Anthony"]
-trust_level = "trusted"
-
-[projects."/home/czc/projects/working/gpd_projects/fT_massive_gravity"]
-trust_level = "trusted"
-
-[projects."/home/czc/projects/working/gpd_projects/GW_energy_massive_gravity"]
+[projects."/home/czc/projects/working/gpd_projects/massive_gravity_orf"]
 trust_level = "trusted"
 
 [projects."/home/czc/projects/working/gpd_projects/GW_energy_massive_gravity_general_background"]
 trust_level = "trusted"
 
-[projects."/home/czc/projects/working/gpd_projects/massive_gravity_orf"]
+[projects."/home/czc/projects/working/gpd_projects/fT_massive_gravity"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/Lean/2603.08139"]
+trust_level = "trusted"
+
+[projects."/home/czc/Downloads/test"]
 trust_level = "trusted"
 
 [projects."/home/czc/projects/working/gpd_projects/GR_ORF"]
@@ -119,10 +94,10 @@ trust_level = "trusted"
 [projects."/home/czc/projects/working/translation/Cosmology_Daniel"]
 trust_level = "trusted"
 
-[projects."/home/czc/projects/working/gpt_reg"]
+[projects."/home/czc/projects/working/gwtc-4/qg_gwtc4"]
 trust_level = "trusted"
 
-[projects."/home/czc/projects/working/gwtc-4/qg_gwtc4"]
+[projects."/home/czc/projects/working/gpt_reg"]
 trust_level = "trusted"
 
 [features]
@@ -130,8 +105,6 @@ trust_level = "trusted"
 multi_agent = true
 # GPD MCP servers
 
-child_agents_md = true
-codex_hooks = true
 [mcp_servers.gpd-arxiv]
 command = "/home/czc/.gpd/venv/bin/python"
 args = ["-m", "arxiv_mcp_server"]
@@ -286,44 +259,5 @@ config_file = "agents/gpd-roadmapper.toml"
 description = "Verifies phase goal achievement through computational verification. Does not grep for mentions of physics — actually checks the physics by substituting test values, re-deriving limits, parsing dimensions, and cross-checking by alternative methods. Creates VERIFICATION.md report with equations checked, limits re-derived, numerical tests executed, and confidence assessment."
 config_file = "agents/gpd-verifier.toml"
 
-[env]
-USE_OMX_EXPLORE_CMD = "1"
-
-[agents]
-max_threads = 6
-max_depth = 2
-
-# ============================================================
-# oh-my-codex (OMX) Configuration
-# Managed by omx setup - manual edits preserved on next setup
-# ============================================================
-
-# OMX State Management MCP Server
-[mcp_servers.omx_state]
-command = "node"
-args = ["/home/czc/.local/lib/node_modules/oh-my-codex/dist/mcp/state-server.js"]
-enabled = true
-startup_timeout_sec = 5
-
-# OMX Project Memory MCP Server
-[mcp_servers.omx_memory]
-command = "node"
-args = ["/home/czc/.local/lib/node_modules/oh-my-codex/dist/mcp/memory-server.js"]
-enabled = true
-startup_timeout_sec = 5
-
-# OMX Code Intelligence MCP Server (LSP diagnostics, AST search)
-[mcp_servers.omx_code_intel]
-command = "node"
-args = ["/home/czc/.local/lib/node_modules/oh-my-codex/dist/mcp/code-intel-server.js"]
-enabled = true
-startup_timeout_sec = 10
-
-# OMX Trace MCP Server (agent flow timeline & statistics)
-[mcp_servers.omx_trace]
-command = "node"
-args = ["/home/czc/.local/lib/node_modules/oh-my-codex/dist/mcp/trace-server.js"]
-enabled = true
-startup_timeout_sec = 5
-# ============================================================
-# End oh-my-codex
+[notice.model_migrations]
+"gpt-5.1-codex-mini" = "gpt-5.4"
