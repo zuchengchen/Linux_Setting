@@ -18,7 +18,7 @@ notify = ["/home/czc/.gpd/venv/bin/python", "/home/czc/.codex/hooks/notify.py"]
 
 [model_providers.oaiapi]
 name = "oaiapi"
-base_url = "https://codex.oaiapi.cn/v1"
+base_url = "https://api1.oai1.online/v1"
 wire_api = "responses"
 requires_openai_auth = true
 
@@ -52,10 +52,25 @@ trust_level = "trusted"
 [projects."/home/czc/projects/working/gpd_tutorial"]
 trust_level = "trusted"
 
+[projects."/home/czc/project/working/test/you"]
+trust_level = "trusted"
+
+[projects."/home/czc/project/working/test/ps2"]
+trust_level = "trusted"
+
+[projects."/home/czc/project/working/test/ps"]
+trust_level = "trusted"
+
+[projects."/home/czc/mirror"]
+trust_level = "trusted"
+
+[projects."/home/czc/youwu"]
+trust_level = "trusted"
+
 [features]
 # GPD multi-agent support
 multi_agent = true
-# GPD MCP servers
+plugins = false
 
 [mcp_servers.gpd-arxiv]
 command = "/home/czc/.gpd/venv/bin/python"
@@ -210,3 +225,4 @@ config_file = "agents/gpd-roadmapper.toml"
 [agents.gpd-verifier]
 description = "Verifies phase goal achievement through computational verification. Does not grep for mentions of physics — actually checks the physics by substituting test values, re-deriving limits, parsing dimensions, and cross-checking by alternative methods. Creates VERIFICATION.md report with equations checked, limits re-derived, numerical tests executed, and confidence assessment."
 config_file = "agents/gpd-verifier.toml"
+# GPD MCP servers
