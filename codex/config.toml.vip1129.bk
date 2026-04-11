@@ -18,7 +18,7 @@ service_tier = "fast"
 
 [model_providers.oaiapi]
 name = "oaiapi"
-base_url = "https://api.vip1129.cc"
+base_url = "https://mjxpukcdglky.us-west-1.clawcloudrun.com"
 wire_api = "responses"
 requires_openai_auth = true
 request_max_retries = 10
