@@ -87,7 +87,7 @@ alias keepscreen="xset s off -dpms"
 alias lockscreen="xset +dpms&& xset dpms 2000 3000 4000"
 alias gitpush='git pull && git add . && git commit -am "update" && git push'
 alias suspend="systemctl hibernate"
-alias sshnube1c="ssh 205.198.88.207"
+alias sshnube1c="ssh 64.118.150.213"
 alias nohupless='nohup > /dev/null 2>&1'
 alias omx="omx --madmax --high"
 
