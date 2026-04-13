@@ -1,2 +1,0 @@
-base_url = "https://codex.oaiapi.cn/v1"
-sk-NtkgEoedFpTuFIfnWmufk16yTZrT3gdA3QvnQ2VYcuwHdvYc

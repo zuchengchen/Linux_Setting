@@ -23,7 +23,32 @@ alias ln="ln -s"
 alias du="du -h"
 alias passivbot="conda activate passivbot"
 alias julab="jupyter lab&"
-alias systemupdate="trizen -Syuu"
+TRIZEN_CLONE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/trizen/sources"
+
+repair_trizen_clone_cache() {
+    local clone_dir="${1:-$TRIZEN_CLONE_DIR}"
+    local repo
+
+    [ -d "$clone_dir" ] || return 0
+
+    shopt -s nullglob
+    for repo in "$clone_dir"/*; do
+        [ -d "$repo" ] || continue
+        [ -e "$repo/.git" ] || continue
+
+        if ! /usr/bin/git -C "$repo" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+            printf ':: Removing broken AUR cache: %s\n' "$repo" >&2
+            /usr/bin/rm -rf -- "$repo"
+        fi
+    done
+    shopt -u nullglob
+}
+
+systemupdate() {
+    mkdir -p "$TRIZEN_CLONE_DIR"
+    repair_trizen_clone_cache "$TRIZEN_CLONE_DIR"
+    /usr/bin/trizen --skipinteg --noconfirm -Syuu "$@"
+}
 alias trizen="trizen --skipinteg --noconfirm"
 alias easyconnect="env LD_LIBRARY_PATH=/usr/share/sangfor/EasyConnect/oldlib/pango/usr/lib /usr/share/sangfor/EasyConnect/EasyConnect --enable-transparent-visuals --disable-gpu"
 alias youdu="/opt/apps/im.xinda.youdu/files/youdu.sh"

@@ -109,6 +109,9 @@ trust_level = "trusted"
 [projects."/home/czc/projects/working/Codex-Manager"]
 trust_level = "trusted"
 
+[projects."/home/czc/projects/working/X6.5-Linux"]
+trust_level = "trusted"
+
 [features]
 # GPD multi-agent support
 multi_agent = true
