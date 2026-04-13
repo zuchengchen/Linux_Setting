@@ -112,9 +112,15 @@ trust_level = "trusted"
 [projects."/home/czc/projects/working/X6.5-Linux"]
 trust_level = "trusted"
 
+[projects."/home/czc/projects/working"]
+trust_level = "trusted"
+
 [features]
 # GPD multi-agent support
 multi_agent = true
+
+[notice.model_migrations]
+"gpt-5.1-codex-mini" = "gpt-5.4"
 # GPD MCP servers
 
 [mcp_servers.gpd-arxiv]
@@ -270,6 +276,3 @@ config_file = "agents/gpd-roadmapper.toml"
 [agents.gpd-verifier]
 description = "Verifies phase goal achievement through computational verification. Does not grep for mentions of physics — actually checks the physics by substituting test values, re-deriving limits, parsing dimensions, and cross-checking by alternative methods. Creates VERIFICATION.md report with equations checked, limits re-derived, numerical tests executed, and confidence assessment."
 config_file = "agents/gpd-verifier.toml"
-
-[notice.model_migrations]
-"gpt-5.1-codex-mini" = "gpt-5.4"
