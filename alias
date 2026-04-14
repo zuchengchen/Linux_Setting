@@ -90,6 +90,7 @@ alias suspend="systemctl hibernate"
 alias sshnube1c="ssh 64.118.150.213"
 alias nohupless='nohup > /dev/null 2>&1'
 alias omx="omx --madmax --high"
+alias X65="conda activate X65"
 
 export JULIAUP_SERVER=https://mirror.nju.edu.cn/julia-releases/ # Linux & macOS
 export JULIA_PKG_SERVER=https://mirrors.nju.edu.cn/julia

@@ -31,6 +31,7 @@ sandbox = "elevated"
 [tui]
  status_line = [
     "model-with-reasoning",
+    "current-dir",
     "git-branch",
     "used-tokens",
     "context-window-size",
