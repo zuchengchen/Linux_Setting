@@ -18,7 +18,7 @@ service_tier = "fast"
 
 [model_providers.oaiapi]
 name = "oaiapi"
-base_url = "http://64.118.150.213:48760/v1"
+base_url = "http://64.118.150.213:8080"
 wire_api = "responses"
 requires_openai_auth = true
 request_max_retries = 10
@@ -132,6 +132,18 @@ trust_level = "trusted"
 trust_level = "trusted"
 
 [projects."/home/czc/projects/working/gwtc-4/pbh_merger_history_gwtc4"]
+trust_level = "trusted"
+
+[projects."/home/czc/Downloads/test/review"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/codex_reg/xianyu"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/codex_reg/xianyu_codex_reg"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working"]
 trust_level = "trusted"
 
 [features]
