@@ -11,10 +11,10 @@ windows_wsl_setup_acknowledged = true
 model_verbosity = "high"
 personality = "friendly"
 plan_mode_reasoning_effort = "xhigh"
+model_instructions_file = '/home/czc/.codex/system-prompt-v2.md'
 
 # GPD update notification
 notify = ["/home/czc/.gpd/venv/bin/python", "/home/czc/.codex/hooks/notify.py"]
-service_tier = "fast"
 
 [model_providers.oaiapi]
 name = "oaiapi"
@@ -144,6 +144,12 @@ trust_level = "trusted"
 trust_level = "trusted"
 
 [projects."/home/czc/projects/working"]
+trust_level = "trusted"
+
+[projects."/home/czc/Downloads/test/CSB-2026-0428"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/codex_reg/X7.1-iCloud分身普号注册机"]
 trust_level = "trusted"
 
 [features]
