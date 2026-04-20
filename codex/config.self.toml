@@ -152,20 +152,22 @@ trust_level = "trusted"
 [projects."/home/czc/projects/working/codex_reg/X7.1-iCloud分身普号注册机"]
 trust_level = "trusted"
 
+[projects."/home/czc/projects/working/codex_reg/X7.1-iCloud分身普号注册机/X7"]
+trust_level = "trusted"
+
 [features]
 # GPD multi-agent support
 multi_agent = true
-# GPD MCP servers
 
 [mcp_servers.gpd-arxiv]
 command = "/home/czc/.gpd/venv/bin/python"
 args = ["-m", "arxiv_mcp_server"]
-startup_timeout_sec = 30
+startup_timeout_sec = 30.0
 
 [mcp_servers.gpd-conventions]
 command = "/home/czc/.gpd/venv/bin/python"
 args = ["-m", "gpd.mcp.servers.conventions_server"]
-startup_timeout_sec = 30
+startup_timeout_sec = 30.0
 
 [mcp_servers.gpd-conventions.env]
 LOG_LEVEL = "WARNING"
@@ -173,7 +175,7 @@ LOG_LEVEL = "WARNING"
 [mcp_servers.gpd-errors]
 command = "/home/czc/.gpd/venv/bin/python"
 args = ["-m", "gpd.mcp.servers.errors_mcp"]
-startup_timeout_sec = 30
+startup_timeout_sec = 30.0
 
 [mcp_servers.gpd-errors.env]
 LOG_LEVEL = "WARNING"
@@ -181,7 +183,7 @@ LOG_LEVEL = "WARNING"
 [mcp_servers.gpd-patterns]
 command = "/home/czc/.gpd/venv/bin/python"
 args = ["-m", "gpd.mcp.servers.patterns_server"]
-startup_timeout_sec = 30
+startup_timeout_sec = 30.0
 
 [mcp_servers.gpd-patterns.env]
 LOG_LEVEL = "WARNING"
@@ -189,7 +191,7 @@ LOG_LEVEL = "WARNING"
 [mcp_servers.gpd-protocols]
 command = "/home/czc/.gpd/venv/bin/python"
 args = ["-m", "gpd.mcp.servers.protocols_server"]
-startup_timeout_sec = 30
+startup_timeout_sec = 30.0
 
 [mcp_servers.gpd-protocols.env]
 LOG_LEVEL = "WARNING"
@@ -197,7 +199,7 @@ LOG_LEVEL = "WARNING"
 [mcp_servers.gpd-skills]
 command = "/home/czc/.gpd/venv/bin/python"
 args = ["-m", "gpd.mcp.servers.skills_server"]
-startup_timeout_sec = 30
+startup_timeout_sec = 30.0
 
 [mcp_servers.gpd-skills.env]
 LOG_LEVEL = "WARNING"
@@ -205,7 +207,7 @@ LOG_LEVEL = "WARNING"
 [mcp_servers.gpd-state]
 command = "/home/czc/.gpd/venv/bin/python"
 args = ["-m", "gpd.mcp.servers.state_server"]
-startup_timeout_sec = 30
+startup_timeout_sec = 30.0
 
 [mcp_servers.gpd-state.env]
 LOG_LEVEL = "WARNING"
@@ -213,10 +215,13 @@ LOG_LEVEL = "WARNING"
 [mcp_servers.gpd-verification]
 command = "/home/czc/.gpd/venv/bin/python"
 args = ["-m", "gpd.mcp.servers.verification_server"]
-startup_timeout_sec = 30
+startup_timeout_sec = 30.0
 
 [mcp_servers.gpd-verification.env]
 LOG_LEVEL = "WARNING"
+
+[mcp_servers.openaiDeveloperDocs]
+url = "https://developers.openai.com/mcp"
 # GPD agent roles
 
 [agents.gpd-bibliographer]
