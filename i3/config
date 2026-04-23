@@ -119,6 +119,9 @@ set $ws18 "8"
 set $ws19 "9"
 set $ws20 "10"
 
+# Keep ROX windows on workspace 4.
+assign [class="^(RoxyBrowser|RoxyChrome)$"] $ws4
+
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
