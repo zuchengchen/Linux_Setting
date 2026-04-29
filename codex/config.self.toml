@@ -1,8 +1,6 @@
 model_provider = "oaiapi"
-model = "gpt-5.4"
+model = "gpt-5.5"
 model_reasoning_effort = "xhigh"
-model_context_window = 1000000
-model_auto_compact_token_limit = 900000
 approval_policy = "never"
 sandbox_mode = "danger-full-access"
 network_access = "enabled"
@@ -36,7 +34,6 @@ sandbox = "elevated"
 
 [tui.model_availability_nux]
 "gpt-5.5" = 4
-
 
 [projects."/home/czc/projects/working/test/math_phy"]
 trust_level = "trusted"
