@@ -102,12 +102,6 @@ export PATH=$PATH:/home/czc/.local/share/gem/ruby/3.0.0/bin
 #export CPATH=/opt/cuda/targets/x86_64-linux/include:$CPATH
 #export LD_LIBRARY_PATH=/opt/cuda/targets/x86_64-linux/lib:$LD_LIBRARY_PATH
 
-
-# add z.lua
-eval "$(/usr/bin/lua $HOME/opt/z.lua/z.lua --init bash enhanced once fzf)"
-export _ZL_ECHO=1
-
-
 # add tempo2 path
 export TEMPO2=$HOME/opt/tempo2/share
 export PATH=$PATH:$HOME/opt/tempo2/bin
