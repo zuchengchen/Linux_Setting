@@ -117,3 +117,6 @@ export XMODIFIERS="@im=fcitx"
 export QT_IM_MODULE="fcitx5"
 export OPENBLAS_NUM_THREADS=1
 export PATH=~/.npm-global/bin:$PATH
+
+# zoxide directory jumper
+eval "$(zoxide init bash)"
