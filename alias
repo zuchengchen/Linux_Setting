@@ -92,6 +92,7 @@ alias sshrabius="ssh 185.93.71.40"
 alias nohupless='nohup > /dev/null 2>&1'
 alias omx="omx --madmax --high"
 alias X65="conda activate X65"
+alias cdx='codex --cd "$PWD"'
 
 export JULIAUP_SERVER=https://mirror.nju.edu.cn/julia-releases/ # Linux & macOS
 export JULIA_PKG_SERVER=https://mirrors.nju.edu.cn/julia
