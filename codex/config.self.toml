@@ -12,7 +12,7 @@ plan_mode_reasoning_effort = "xhigh"
 
 [model_providers.oaiapi]
 name = "oaiapi"
-base_url = "https://api.myoldgirlfriend.store"
+base_url = "http://64.118.150.213:8080"
 wire_api = "responses"
 requires_openai_auth = true
 request_max_retries = 10
