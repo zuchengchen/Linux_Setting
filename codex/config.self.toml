@@ -160,6 +160,30 @@ trust_level = "trusted"
 [projects."/home/czc/projects/done/Linux_Setting"]
 trust_level = "trusted"
 
+[projects."/home/czc/projects/working/translation/QM_Shankar"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/translation/complex_variables_and_applications"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/translation/QFT_Anthony"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/translation/differential_quations_demystified"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/translation/General Relativity-An Introduction for Physicists"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/gwtc5"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/gwtc4/SGWB"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/gwtc4"]
+trust_level = "trusted"
+
 [features]
 multi_agent = true
 plugins = false
