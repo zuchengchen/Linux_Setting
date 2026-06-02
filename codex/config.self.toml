@@ -184,6 +184,9 @@ trust_level = "trusted"
 [projects."/home/czc/projects/working/gwtc4"]
 trust_level = "trusted"
 
+[projects."/home/czc/projects/working/wan2gp"]
+trust_level = "trusted"
+
 [features]
 multi_agent = true
 plugins = false
