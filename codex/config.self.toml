@@ -190,15 +190,74 @@ trust_level = "trusted"
 [projects."/home/czc/projects/working/Qwen"]
 trust_level = "trusted"
 
+[projects."/home/czc/Downloads/test/team/20260608-075429-83bb7393 (1)"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/Taiji"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/codex_reg/chatgpt-team-register"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/stock/KLineForge"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/dynesty.jl"]
+trust_level = "trusted"
+
+[projects."/home/czc/Documents/Codex/2026-06-10/hi"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/Icarogw.jl"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/Dynesty.jl"]
+trust_level = "trusted"
+
 [features]
 multi_agent = true
 plugins = false
+js_repl = false
 
 [mcp_servers.openaiDeveloperDocs]
 url = "https://developers.openai.com/mcp"
+
+[mcp_servers.node_repl]
+args = []
+command = "/opt/codex-desktop/resources/node_repl"
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = ""
+NODE_REPL_NODE_PATH = "/opt/codex-desktop/resources/node-runtime/bin/node"
+NODE_REPL_TRUSTED_CODE_PATHS = "/home/czc/.codex"
+CODEX_HOME = "/home/czc/.codex"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "496c7b3cb95b4bc20cff49b513150606e0da0000c92bf752206bee5a6c248423,c69702d945f8bf56a4a529c4e6ded337b12d40203a3ada637870cceff8d4b900,fc05eca603616d74db7ac587851a19a66d94608533741186c1251f540c5835cd"
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+BROWSER_USE_MARKETPLACE_NAME = "openai-bundled"
+NODE_REPL_UNTRUSTED_ENV_ALLOWLIST = "BROWSER_USE_MARKETPLACE_NAME"
 
 [notice]
 hide_rate_limit_model_nudge = true
 
 [notice.model_migrations]
 "gpt-5.1-codex-mini" = "gpt-5.4"
+
+[marketplaces.openai-bundled]
+last_updated = "2026-06-10T04:50:53Z"
+source_type = "local"
+source = "/home/czc/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."read-aloud@openai-bundled"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[desktop]
+conversationDetailMode = "STEPS_COMMANDS"
+ambient-suggestions-enabled = false
