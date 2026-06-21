@@ -8,11 +8,11 @@ disable_response_storage = true
 windows_wsl_setup_acknowledged = true
 model_verbosity = "high"
 personality = "friendly"
-plan_mode_reasoning_effort = "xhigh"
+plan_mode_reasoning_effort = "high"
 
 [model_providers.oaiapi]
 name = "oaiapi"
-base_url = "http://64.118.150.213:8080"
+base_url = "https://mofa.love.gd"
 wire_api = "responses"
 requires_openai_auth = true
 request_max_retries = 10
@@ -214,6 +214,15 @@ trust_level = "trusted"
 [projects."/home/czc/projects/working/Dynesty.jl"]
 trust_level = "trusted"
 
+[projects."/home/czc/Downloads/temp"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/goal-workflow"]
+trust_level = "trusted"
+
+[projects."/home/czc/projects/working/qft_from_caculus"]
+trust_level = "trusted"
+
 [features]
 multi_agent = true
 plugins = false
@@ -245,7 +254,7 @@ hide_rate_limit_model_nudge = true
 "gpt-5.1-codex-mini" = "gpt-5.4"
 
 [marketplaces.openai-bundled]
-last_updated = "2026-06-10T04:50:53Z"
+last_updated = "2026-06-15T02:09:47Z"
 source_type = "local"
 source = "/home/czc/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
