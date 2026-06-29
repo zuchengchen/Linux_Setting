@@ -325,7 +325,7 @@ exec --no-startup-id i3-msg "workspace $ws2; exec blueman-manager"
 #exec --no-startup-id i3-msg "workspace $ws2; exec cfw"
 
 # autostart flameshot
-exec --no-startup-id flameshot
+exec --no-startup-id /home/czc/.local/bin/flameshot
 
 # autostart wechat 
 exec --no-startup-id i3-msg "workspace $ws2; exec wechat"
@@ -344,6 +344,9 @@ exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh,secr
 # bindsym $mod+Shift+F1 exec bash -c "pkill -f empty-ws-monitor.sh; rm -f /tmp/i3-empty-ws-display.lock; DISPLAY_TOOL=btop ~/.config/i3/scripts/empty-ws-monitor.sh & notify-send '系统显示' '已切换到 btop 模式'"
 bindsym $mod+Shift+F2 exec bash -c "pkill -f empty-ws-monitor.sh; rm -f /tmp/i3-empty-ws-display.lock; DISPLAY_TOOL=fastfetch ~/.config/i3/scripts/empty-ws-monitor.sh & notify-send '系统显示' '已切换到 fastfetch 模式'"
 
+
+# autostart clipboard sync (PRIMARY → CLIPBOARD for Ctrl+Shift+V in OpenCode)
+exec --no-startup-id ~/.local/bin/sync-clipboard
 
 # screen blanking timeout (30 minutes)
 exec --no-startup-id xset s 1800 1800 dpms 1800 1800 1800
